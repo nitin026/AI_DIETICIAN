@@ -1,0 +1,117 @@
+{
+  "examples": {
+    "nutrient_prediction_request": {
+      "health_profile": {
+        "age": 45,
+        "gender": "female",
+        "height_cm": 158.0,
+        "weight_kg": 72.0,
+        "occupation": "School Teacher",
+        "activity_level": "lightly_active",
+        "diseases": ["type-2 diabetes", "hypertension"],
+        "medications": ["metformin 500mg", "amlodipine 5mg"],
+        "addictions": {
+          "smoking": "never",
+          "alcohol": "never",
+          "tobacco": "never"
+        }
+      }
+    },
+    "nutrient_prediction_response": {
+      "bmr": 1437.5,
+      "tdee": 1976.6,
+      "daily_targets": {
+        "calories": 1776.6,
+        "protein_g": 88.8,
+        "carbs_g": 177.7,
+        "fat_g": 49.3,
+        "fiber_g": 34.0,
+        "water_ml": 2520.0,
+        "sodium_mg": 1500.0,
+        "potassium_mg": 3500.0,
+        "iron_mg": null,
+        "calcium_mg": null,
+        "vitamin_d_iu": null,
+        "b12_mcg": 2.4
+      },
+      "disease_notes": [
+        "Adjustments applied for type-2 diabetes.",
+        "Adjustments applied for hypertension."
+      ],
+      "medication_interactions": [
+        "Metformin reduces B12 absorption; supplement recommended.",
+        "ACE inhibitors can raise potassium levels."
+      ],
+      "icmr_references": [
+        "ICMR-NIN 2024: For diabetic individuals, dietary carbohydrates should constitute 40–55% of total energy.",
+        "ICMR-NIN 2024: Sodium intake should be restricted to less than 2g/day in hypertensive individuals."
+      ],
+      "disclaimer": "This AI dietitian is an informational assistant and is not a substitute for professional medical advice, diagnosis, or treatment."
+    },
+    "meal_plan_request": {
+      "health_profile": { "$ref": "#/examples/nutrient_prediction_request/health_profile" },
+      "preference_profile": {
+        "likes": ["dal", "rice", "chapati", "idli", "sambar"],
+        "dislikes": ["bitter gourd"],
+        "dietary_preference": "vegetarian",
+        "allergies": [],
+        "pantry_ingredients": ["rice", "dal", "onion", "tomato", "ginger", "garlic", "turmeric", "oil", "atta", "mustard seeds"],
+        "budget": "medium",
+        "cooking_skill": "intermediate",
+        "regional_cuisine": "South Indian"
+      }
+    },
+    "meal_plan_day_sample": {
+      "day": "Monday",
+      "breakfast": {
+        "name": "Oats Idli with Sambar",
+        "ingredients": ["oats", "semolina", "curd", "mustard seeds", "curry leaves", "sambar powder"],
+        "calories": 320,
+        "protein_g": 12.0,
+        "carbs_g": 55.0,
+        "fat_g": 6.0,
+        "recipe_steps": [
+          "Roast oats and semolina lightly.",
+          "Mix with curd and let rest 10 minutes.",
+          "Steam in idli moulds for 12 minutes.",
+          "Prepare sambar with toor dal and vegetables.",
+          "Serve hot with coconut chutney."
+        ],
+        "youtube_url": "https://www.youtube.com/watch?v=example"
+      },
+      "mid_morning_snack": {
+        "name": "Banana & Flaxseed Smoothie",
+        "ingredients": ["banana", "low-fat milk", "flaxseeds"],
+        "calories": 180,
+        "protein_g": 6.0,
+        "carbs_g": 30.0,
+        "fat_g": 4.5,
+        "recipe_steps": ["Blend all ingredients until smooth.", "Serve immediately."],
+        "youtube_url": null
+      },
+      "daily_totals": {
+        "calories": 1750.0,
+        "protein_g": 87.0,
+        "carbs_g": 175.0,
+        "fat_g": 48.0,
+        "fiber_g": 33.0,
+        "water_ml": 2520.0
+      }
+    },
+    "grocery_list_response": {
+      "items": [
+        {"ingredient": "Brown Rice", "quantity": "1 kg", "estimated_cost_inr": 90.0, "category": "Grains"},
+        {"ingredient": "Toor Dal", "quantity": "500g", "estimated_cost_inr": 75.0, "category": "Protein"},
+        {"ingredient": "Spinach", "quantity": "500g", "estimated_cost_inr": 25.0, "category": "Vegetables"},
+        {"ingredient": "Low-Fat Milk", "quantity": "2 L", "estimated_cost_inr": 110.0, "category": "Dairy"},
+        {"ingredient": "Banana", "quantity": "1 dozen", "estimated_cost_inr": 60.0, "category": "Fruits"}
+      ],
+      "total_estimated_cost_inr": 1840.0,
+      "notes": [
+        "Prices are approximate (2024 retail rates).",
+        "Buy seasonal vegetables and fruits for cost savings.",
+        "Prefer whole grains over refined grains per ICMR-NIN guidelines."
+      ]
+    }
+  }
+}

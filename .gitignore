@@ -1,0 +1,32 @@
+# Environment & secrets
+.env
+*.env
+
+# Vector store (large binary files)
+backend/rag/vector_store/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+
+# Anaconda / virtualenv
+.venv/
+env/
+venv/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PDF (large file — share separately)
+data/*.pdf
+
+# Jupyter
+.ipynb_checkpoints/
