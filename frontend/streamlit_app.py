@@ -16,7 +16,8 @@ from fpdf import FPDF
 
 # ── Configuration ─────────────────────────────────────────────────────────────
 import os
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+import streamlit as st
+BACKEND_URL = st.secrets.get("BACKEND_URL", os.getenv("BACKEND_URL", "http://localhost:8000"))
 
 DISCLAIMER = (
     "⚠️ **Medical Disclaimer:** This AI dietitian is an informational assistant "
