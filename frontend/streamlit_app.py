@@ -7,29 +7,30 @@ from __future__ import annotations
 
 import io
 import json
+import os
 from typing import Any
+from collections import defaultdict
 
 import plotly.graph_objects as go
 import requests
 import streamlit as st
 from fpdf import FPDF
 
-# ── Configuration ─────────────────────────────────────────────────────────────
-import os
-import streamlit as st
-BACKEND_URL = st.secrets.get("BACKEND_URL", os.getenv("BACKEND_URL", "http://localhost:8000"))
-
-DISCLAIMER = (
-    "⚠️ **Medical Disclaimer:** This AI dietitian is an informational assistant "
-    "and is **not** a substitute for professional medical advice, diagnosis, or treatment. "
-    "Always consult a qualified healthcare provider before making dietary changes."
-)
-
+# ── MUST be the very first Streamlit command ──────────────────────────────────
 st.set_page_config(
     page_title="AI Dietitian – Powered by BioMistral",
     page_icon="🥗",
     layout="wide",
     initial_sidebar_state="expanded",
+)
+
+# ── Configuration ─────────────────────────────────────────────────────────────
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+
+DISCLAIMER = (
+    "⚠️ **Medical Disclaimer:** This AI dietitian is an informational assistant "
+    "and is **not** a substitute for professional medical advice, diagnosis, or treatment. "
+    "Always consult a qualified healthcare provider before making dietary changes."
 )
 
 # ── Custom CSS ────────────────────────────────────────────────────────────────
@@ -70,6 +71,7 @@ init_state()
 with st.sidebar:
     st.markdown("## 🥗 AI Dietitian")
     st.markdown("*Powered by BioMistral + ICMR-NIN 2024*")
+    st.caption(f"🔗 Backend: {BACKEND_URL}")
     st.divider()
     step_labels = {
         1: "📋 Health Profile",
@@ -94,7 +96,7 @@ def api_post(endpoint: str, payload: dict) -> dict | None:
         resp.raise_for_status()
         return resp.json()
     except requests.exceptions.ConnectionError:
-        st.error("❌ Cannot connect to backend. Is the FastAPI server running?")
+        st.error(f"❌ Cannot connect to backend at {BACKEND_URL}. Is the FastAPI server running?")
     except requests.exceptions.Timeout:
         st.error("⏱️ Request timed out. The LLM may be slow – please try again.")
     except requests.exceptions.HTTPError as e:
@@ -220,7 +222,7 @@ def step3_nutrients():
     st.markdown('<p class="main-header">🔬 Step 3 — Nutrient Analysis</p>', unsafe_allow_html=True)
 
     if st.session_state.nutrient_response is None:
-        with st.spinner("🤖 BioMistral is analysing your health profile via ICMR-NIN guidelines …"):
+        with st.spinner("🤖 Analysing your health profile via ICMR-NIN guidelines …"):
             payload = {"health_profile": st.session_state.health_profile}
             response = api_post("/predict-nutrients", payload)
             if response:
@@ -235,7 +237,6 @@ def step3_nutrients():
 
     targets = resp.get("daily_targets", {})
 
-    # Macro gauges
     st.subheader("📊 Your Daily Nutrient Targets")
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("🔥 Calories", f"{targets.get('calories', 0):.0f} kcal")
@@ -248,7 +249,6 @@ def step3_nutrients():
     c6.metric("💧 Water", f"{targets.get('water_ml', 0):.0f} ml")
     c7.metric("📉 BMR", f"{resp.get('bmr', 0):.0f} kcal")
 
-    # Macro pie chart
     fig = go.Figure(go.Pie(
         labels=["Protein", "Carbohydrates", "Fat"],
         values=[
@@ -262,7 +262,6 @@ def step3_nutrients():
     fig.update_layout(title="Calorie Distribution", height=300, showlegend=True)
     st.plotly_chart(fig, use_container_width=True)
 
-    # Micronutrients
     micros = {k: v for k, v in targets.items()
                if k not in ("calories","protein_g","carbs_g","fat_g","fiber_g","water_ml") and v}
     if micros:
@@ -271,7 +270,6 @@ def step3_nutrients():
         for col, (k, v) in zip(micro_cols, micros.items()):
             col.metric(k.replace("_", " ").title(), str(v))
 
-    # Clinical notes
     if resp.get("disease_notes"):
         with st.expander("🏥 Disease Adjustments Applied"):
             for note in resp["disease_notes"]:
@@ -354,7 +352,6 @@ def step4_meal_plan():
             if meal.get("youtube_url"):
                 st.markdown(f"[▶️ Watch Recipe Tutorial]({meal['youtube_url']})")
 
-    # Daily totals bar chart
     totals = day_data.get("daily_totals", {})
     if totals:
         st.subheader("📈 Daily Nutrition Summary")
@@ -379,7 +376,6 @@ def step4_meal_plan():
             st.session_state.step = 5
             st.rerun()
 
-    # Download meal plan
     meal_json = json.dumps(plan, indent=2)
     st.download_button("⬇️ Download Meal Plan (JSON)", meal_json, "meal_plan.json", "application/json")
 
@@ -409,8 +405,6 @@ def step5_grocery():
     total = grocery.get("total_estimated_cost_inr", 0)
     st.metric("🧾 Estimated Weekly Cost", f"₹{total:.0f}")
 
-    # Group by category
-    from collections import defaultdict
     by_category: dict[str, list] = defaultdict(list)
     for item in items:
         by_category[item.get("category", "General")].append(item)
@@ -437,7 +431,6 @@ def step5_grocery():
             for note in grocery["notes"]:
                 st.info(note)
 
-    # PDF download
     if st.button("📄 Download as PDF"):
         pdf_bytes = _generate_pdf(grocery, st.session_state.meal_plan_response)
         st.download_button("⬇️ Download PDF", pdf_bytes, "dietitian_plan.pdf", "application/pdf")
@@ -457,7 +450,7 @@ def _generate_pdf(grocery: dict, meal_plan: dict) -> bytes:
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Helvetica", "B", 16)
-    pdf.cell(0, 10, "AI Dietitian – Personalised Plan", ln=True, align="C")
+    pdf.cell(0, 10, "AI Dietitian - Personalised Plan", ln=True, align="C")
     pdf.set_font("Helvetica", size=9)
     pdf.multi_cell(0, 5, (
         "DISCLAIMER: This AI dietitian is an informational assistant and is NOT a substitute "
@@ -468,7 +461,7 @@ def _generate_pdf(grocery: dict, meal_plan: dict) -> bytes:
     pdf.cell(0, 8, "Weekly Grocery List", ln=True)
     pdf.set_font("Helvetica", size=10)
     for item in grocery.get("items", []):
-        cost = f"  ~₹{item['estimated_cost_inr']:.0f}" if item.get("estimated_cost_inr") else ""
+        cost = f"  ~Rs.{item['estimated_cost_inr']:.0f}" if item.get("estimated_cost_inr") else ""
         pdf.cell(0, 6, f"  {item['ingredient']}  ({item['quantity']}){cost}", ln=True)
     pdf.ln(4)
     total = grocery.get("total_estimated_cost_inr", 0)
