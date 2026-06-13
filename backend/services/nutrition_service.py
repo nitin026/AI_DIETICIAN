@@ -6,6 +6,7 @@ No LLM dependency – used as a deterministic baseline.
 from __future__ import annotations
 
 from backend.models.request_models import HealthProfile
+from backend.services.nutrient_reference import build_micronutrient_targets
 from backend.utils.helpers import calculate_bmr, calculate_tdee
 
 
@@ -90,7 +91,7 @@ def compute_baseline_nutrients(profile: HealthProfile) -> dict:
     fat_g = round((calories * fat_pct) / 9, 1)
     fiber_g = round(14 + micronutrients.pop("fiber_g_add", 0), 1)
     water_ml = round(profile.weight_kg * 35, 0)   # 35 ml/kg body weight
-
+    advanced_micros = build_micronutrient_targets(profile)
     return {
         "bmr": round(bmr, 1),
         "tdee": round(tdee, 1),
@@ -101,12 +102,18 @@ def compute_baseline_nutrients(profile: HealthProfile) -> dict:
             "fat_g": fat_g,
             "fiber_g": fiber_g,
             "water_ml": water_ml,
-            "sodium_mg": micronutrients.get("sodium_mg_limit"),
-            "potassium_mg": micronutrients.get("potassium_mg_min") or micronutrients.get("potassium_mg_limit"),
-            "iron_mg": micronutrients.get("iron_mg_min"),
-            "calcium_mg": micronutrients.get("calcium_mg_min"),
-            "vitamin_d_iu": micronutrients.get("vitamin_d_iu_min"),
-            "b12_mcg": micronutrients.get("b12_mcg_min"),
+            **advanced_micros,
+            "fiber_g": max(fiber_g, advanced_micros.get("fiber_g", fiber_g)),
+            "sodium_mg": micronutrients.get("sodium_mg_limit") or advanced_micros.get("sodium_mg"),
+            "potassium_mg": (
+                micronutrients.get("potassium_mg_min")
+                or micronutrients.get("potassium_mg_limit")
+                or advanced_micros.get("potassium_mg")
+            ),
+            "iron_mg": micronutrients.get("iron_mg_min") or advanced_micros.get("iron_mg"),
+            "calcium_mg": micronutrients.get("calcium_mg_min") or advanced_micros.get("calcium_mg"),
+            "vitamin_d_iu": micronutrients.get("vitamin_d_iu_min") or advanced_micros.get("vitamin_d_iu"),
+            "b12_mcg": micronutrients.get("b12_mcg_min") or advanced_micros.get("vitamin_b12_mcg"),
         },
         "disease_notes": disease_notes,
         "medication_interactions": medication_notes,

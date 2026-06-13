@@ -11,6 +11,7 @@ from backend.models.request_models import HealthProfile
 from backend.models.response_models import NutrientPredictionResponse
 from backend.prompts.nutrient_prompt import build_nutrient_prompt, NUTRIENT_SYSTEM
 from backend.rag.retriever import retrieve
+from backend.services.nutrient_reference import FOOD_SOURCES, score_nutrient_adequacy
 from backend.services import llm_service, nutrition_service
 
 
@@ -54,8 +55,11 @@ class ClinicalAnalystAgent:
         )
 
         try:
-            llm_output = await llm_service.generate_json(prompt, system=NUTRIENT_SYSTEM)
-            refined_targets = llm_output.get("daily_targets", baseline["daily_targets"])
+            llm_output = await llm_service.generate_json(prompt, system=NUTRIENT_SYSTEM, task="nutrient")
+            refined_targets = self._merge_daily_targets(
+                baseline["daily_targets"],
+                llm_output.get("daily_targets", {}),
+            )
             disease_notes = llm_output.get("disease_notes", baseline["disease_notes"])
             med_interactions = llm_output.get("medication_interactions", baseline["medication_interactions"])
             icmr_refs = llm_output.get("icmr_references", [])
@@ -66,6 +70,13 @@ class ClinicalAnalystAgent:
             med_interactions = baseline["medication_interactions"]
             icmr_refs = []
 
+        adequacy = score_nutrient_adequacy(refined_targets)
+        deficiency_risks = [
+            f"{name.replace('_', ' ').title()} may need attention."
+            for name, item in adequacy.get("nutrients", {}).items()
+            if item.get("status") == "low"
+        ][:8]
+
         return NutrientPredictionResponse(
             bmr=baseline["bmr"],
             tdee=baseline["tdee"],
@@ -73,7 +84,24 @@ class ClinicalAnalystAgent:
             disease_notes=disease_notes,
             medication_interactions=med_interactions,
             icmr_references=icmr_refs,
+            nutrient_adequacy=adequacy,
+            deficiency_risks=deficiency_risks,
+            food_suggestions=FOOD_SOURCES,
         )
+
+    def _merge_daily_targets(self, baseline_targets: dict, llm_targets: dict | None) -> dict:
+        """Preserve the full deterministic micronutrient panel after LLM refinement."""
+        merged = dict(baseline_targets)
+        for key, value in (llm_targets or {}).items():
+            if value is not None:
+                merged[key] = value
+
+        if "b12_mcg" in merged and "vitamin_b12_mcg" not in merged:
+            merged["vitamin_b12_mcg"] = merged["b12_mcg"]
+        elif "vitamin_b12_mcg" in merged:
+            merged["b12_mcg"] = merged["vitamin_b12_mcg"]
+
+        return merged
 
     def _build_rag_queries(self, profile: HealthProfile) -> list[str]:
         """Construct semantic queries tailored to the patient's conditions."""

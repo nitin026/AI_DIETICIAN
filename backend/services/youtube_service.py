@@ -5,6 +5,8 @@ Uses youtube-search-python (no API key required).
 """
 from __future__ import annotations
 
+import asyncio
+
 from loguru import logger
 
 try:
@@ -24,8 +26,7 @@ async def get_recipe_url(meal_name: str, cuisine: str = "Indian") -> str | None:
         return None
     try:
         query = f"{meal_name} {cuisine} recipe"
-        search = VideosSearch(query, limit=1)
-        results = search.result()
+        results = await asyncio.to_thread(lambda: VideosSearch(query, limit=1).result())
         videos = results.get("result", [])
         if videos:
             url = videos[0].get("link")

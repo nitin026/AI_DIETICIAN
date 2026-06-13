@@ -24,7 +24,33 @@ class DailyTargets(BaseModel):
     calcium_mg: Optional[float] = None
     vitamin_d_iu: Optional[float] = None
     b12_mcg: Optional[float] = None
-
+    vitamin_a_mcg: Optional[float] = None
+    vitamin_b1_mg: Optional[float] = None
+    vitamin_b2_mg: Optional[float] = None
+    vitamin_b3_mg: Optional[float] = None
+    vitamin_b5_mg: Optional[float] = None
+    vitamin_b6_mg: Optional[float] = None
+    vitamin_b7_mcg: Optional[float] = None
+    vitamin_b9_mcg: Optional[float] = None
+    vitamin_b12_mcg: Optional[float] = None
+    vitamin_c_mg: Optional[float] = None
+    vitamin_e_mg: Optional[float] = None
+    vitamin_k_mcg: Optional[float] = None
+    magnesium_mg: Optional[float] = None
+    zinc_mg: Optional[float] = None
+    selenium_mcg: Optional[float] = None
+    copper_mg: Optional[float] = None
+    phosphorus_mg: Optional[float] = None
+    iodine_mcg: Optional[float] = None
+    chloride_mg: Optional[float] = None
+    manganese_mg: Optional[float] = None
+    chromium_mcg: Optional[float] = None
+    molybdenum_mcg: Optional[float] = None
+    choline_mg: Optional[float] = None
+    omega_3_g: Optional[float] = None
+    omega_6_g: Optional[float] = None
+    glycemic_load: Optional[float] = None
+    glycemic_index: Optional[float] = None
 
 class NutrientPredictionResponse(BaseModel):
     bmr: float
@@ -33,6 +59,9 @@ class NutrientPredictionResponse(BaseModel):
     disease_notes: List[str] = Field(default_factory=list)
     medication_interactions: List[str] = Field(default_factory=list)
     icmr_references: List[str] = Field(default_factory=list)
+    nutrient_adequacy: dict = Field(default_factory=dict)
+    deficiency_risks: List[str] = Field(default_factory=list)
+    food_suggestions: dict = Field(default_factory=dict)
     disclaimer: str = (
         "This AI dietitian is an informational assistant and is not a substitute "
         "for professional medical advice, diagnosis, or treatment."
@@ -49,8 +78,13 @@ class Meal(BaseModel):
     protein_g: float
     carbs_g: float
     fat_g: float
+    fiber_g: float
+    preparation_time_minutes: int = Field(..., ge=0)
+    difficulty: str
+    estimated_cost_inr: float = Field(..., ge=0)
     recipe_steps: List[str] = Field(default_factory=list)
     youtube_url: Optional[str] = None
+    recommendation_score: Optional[float] = None
 
 
 class DayPlan(BaseModel):
@@ -103,3 +137,37 @@ class GroceryListResponse(BaseModel):
     items: List[GroceryItem]
     total_estimated_cost_inr: Optional[float] = None
     notes: List[str] = Field(default_factory=list)
+
+
+
+class ChatResponse(BaseModel):
+    user_id: str
+    message_id: str
+    answer: str
+    warnings: List[str] = Field(default_factory=list)
+    suggested_actions: List[str] = Field(default_factory=list)
+    disclaimer: str = (
+        "This AI nutrition assistant is informational and is not a substitute for medical care."
+    )
+
+
+class FeedbackResponse(BaseModel):
+    saved: bool
+    feedback: dict
+    preference_memory: dict = Field(default_factory=dict)
+
+
+class AdherenceResponse(BaseModel):
+    saved: bool
+    log: dict
+    summary: dict = Field(default_factory=dict)
+
+
+class AnalyticsResponse(BaseModel):
+    user_id: str
+    nutrient_adequacy: dict = Field(default_factory=dict)
+    adherence: dict = Field(default_factory=dict)
+    preference_memory: dict = Field(default_factory=dict)
+    health_score: float = 0
+    predicted_adherence_risk: str = "unknown"
+    insights: List[str] = Field(default_factory=list)

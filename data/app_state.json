@@ -1,0 +1,944 @@
+{
+  "profiles": {
+    "demo-user": {
+      "health_profile": {
+        "age": 30,
+        "gender": "male",
+        "height_cm": 170.0,
+        "weight_kg": 70.0,
+        "occupation": "Software Engineer",
+        "activity_level": "moderately_active",
+        "diseases": [
+          "Mild hypertension",
+          "high cholesterol (borderline LDL)",
+          "vitamin B12 deficiency"
+        ],
+        "medications": [
+          "Telmisartan 40mg (once daily)",
+          "Vitamin B12 supplement (weekly)"
+        ],
+        "addictions": {
+          "smoking": "never",
+          "alcohol": "never",
+          "tobacco": "never"
+        }
+      },
+      "preference_profile": {
+        "likes": [
+          "rice",
+          "fish curry",
+          "chicken curry",
+          "ilish",
+          "rohu",
+          "mutton (occasionally)",
+          "egg curry",
+          "dal",
+          "aloo posto",
+          "shorshe bata dishes",
+          "doi"
+        ],
+        "dislikes": [
+          "broccoli",
+          "bitter gourd"
+        ],
+        "dietary_preference": "non_vegetarian",
+        "allergies": [
+          "None"
+        ],
+        "pantry_ingredients": [
+          "rice",
+          "mustard oil",
+          "onion",
+          "tomato",
+          "potato",
+          "ginger",
+          "garlic",
+          "green chilli",
+          "turmeric",
+          "cumin",
+          "mustard seeds",
+          "posto",
+          "masoor dal",
+          "moong dal",
+          "egg",
+          "chicken",
+          "rohu fish",
+          "curd",
+          "milk"
+        ],
+        "budget": "high",
+        "cooking_skill": "advanced",
+        "regional_cuisine": "Bengali"
+      },
+      "daily_targets": {
+        "calories": 2500.0,
+        "protein_g": 107.0,
+        "carbs_g": 340.0,
+        "fat_g": 78.0,
+        "fiber_g": 25.0,
+        "water_ml": 2450.0,
+        "sodium_mg": 1500.0,
+        "potassium_mg": 3500.0,
+        "iron_mg": 19.0,
+        "calcium_mg": 1000.0,
+        "vitamin_d_iu": 600.0,
+        "b12_mcg": 2.2,
+        "vitamin_a_mcg": 840.0,
+        "vitamin_b1_mg": 1.4,
+        "vitamin_b2_mg": 1.6,
+        "vitamin_b3_mg": 16.0,
+        "vitamin_b5_mg": 5.0,
+        "vitamin_b6_mg": 2.0,
+        "vitamin_b7_mcg": 30.0,
+        "vitamin_b9_mcg": 220.0,
+        "vitamin_b12_mcg": 2.2,
+        "vitamin_c_mg": 80.0,
+        "vitamin_e_mg": 10.0,
+        "vitamin_k_mcg": 55.0,
+        "magnesium_mg": 340.0,
+        "zinc_mg": 12.0,
+        "selenium_mcg": 40.0,
+        "copper_mg": 1.7,
+        "phosphorus_mg": 1000.0,
+        "iodine_mcg": 150.0,
+        "chloride_mg": 2300.0,
+        "manganese_mg": 4.0,
+        "chromium_mcg": 35.0,
+        "molybdenum_mcg": 45.0,
+        "choline_mg": 550.0,
+        "omega_3_g": 1.6,
+        "omega_6_g": 10.0,
+        "glycemic_load": 80.0,
+        "glycemic_index": 55.0
+      },
+      "meal_plan": {
+        "week": [
+          {
+            "day": "Monday",
+            "breakfast": {
+              "name": "Luchi",
+              "ingredients": [
+                "refined flour",
+                "ghee",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            },
+            "mid_morning_snack": {
+              "name": "Mishti Doi",
+              "ingredients": [
+                "curd",
+                "sugar"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "lunch": {
+              "name": "Bengali Fish Curry",
+              "ingredients": [
+                "rohu fish",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 750.0,
+              "protein_g": 32.1,
+              "carbs_g": 102.0,
+              "fat_g": 23.4
+            },
+            "evening_snack": {
+              "name": "Aloo Posto",
+              "ingredients": [
+                "potato",
+                "posto",
+                "mustard oil",
+                "onion",
+                "green chilli"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "dinner": {
+              "name": "Chicken Rezala",
+              "ingredients": [
+                "chicken",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            }
+          },
+          {
+            "day": "Tuesday",
+            "breakfast": {
+              "name": "Radhaballavi",
+              "ingredients": [
+                "refined flour",
+                "lentil",
+                "ghee",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            },
+            "mid_morning_snack": {
+              "name": "Shorshe Bata",
+              "ingredients": [
+                "mustard seeds",
+                "green chilli",
+                "garlic",
+                "salt",
+                "mustard oil"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "lunch": {
+              "name": "Mutton Kosha",
+              "ingredients": [
+                "mutton",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 750.0,
+              "protein_g": 32.1,
+              "carbs_g": 102.0,
+              "fat_g": 23.4
+            },
+            "evening_snack": {
+              "name": "Moong Dal",
+              "ingredients": [
+                "moong dal",
+                "mustard oil",
+                "onion",
+                "green chilli",
+                "salt"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "dinner": {
+              "name": "Ilish Machh Bhaja",
+              "ingredients": [
+                "ilish fish",
+                "mustard oil",
+                "onion",
+                "green chilli",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            }
+          },
+          {
+            "day": "Wednesday",
+            "breakfast": {
+              "name": "Paratha",
+              "ingredients": [
+                "refined flour",
+                "ghee",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            },
+            "mid_morning_snack": {
+              "name": "Doi",
+              "ingredients": [
+                "curd"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "lunch": {
+              "name": "Egg Curry",
+              "ingredients": [
+                "egg",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 750.0,
+              "protein_g": 32.1,
+              "carbs_g": 102.0,
+              "fat_g": 23.4
+            },
+            "evening_snack": {
+              "name": "Masoor Dal",
+              "ingredients": [
+                "masoor dal",
+                "mustard oil",
+                "onion",
+                "green chilli",
+                "salt"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "dinner": {
+              "name": "Rui Macher Jhol",
+              "ingredients": [
+                "rohu fish",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            }
+          },
+          {
+            "day": "Thursday",
+            "breakfast": {
+              "name": "Puri",
+              "ingredients": [
+                "refined flour",
+                "ghee",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            },
+            "mid_morning_snack": {
+              "name": "Aam Doi",
+              "ingredients": [
+                "curd",
+                "mango"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "lunch": {
+              "name": "Chicken Dak Bungalow",
+              "ingredients": [
+                "chicken",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 750.0,
+              "protein_g": 32.1,
+              "carbs_g": 102.0,
+              "fat_g": 23.4
+            },
+            "evening_snack": {
+              "name": "Posto Bata",
+              "ingredients": [
+                "posto",
+                "mustard oil",
+                "green chilli",
+                "garlic",
+                "salt"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "dinner": {
+              "name": "Pomfret Fry",
+              "ingredients": [
+                "pomfret fish",
+                "mustard oil",
+                "onion",
+                "green chilli",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            }
+          },
+          {
+            "day": "Friday",
+            "breakfast": {
+              "name": "Kachori",
+              "ingredients": [
+                "refined flour",
+                "lentil",
+                "ghee",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            },
+            "mid_morning_snack": {
+              "name": "Jalbhara Sandesh",
+              "ingredients": [
+                "curd",
+                "sugar"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "lunch": {
+              "name": "Mutton Rezala",
+              "ingredients": [
+                "mutton",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 750.0,
+              "protein_g": 32.1,
+              "carbs_g": 102.0,
+              "fat_g": 23.4
+            },
+            "evening_snack": {
+              "name": "Moong Dal Khichdi",
+              "ingredients": [
+                "moong dal",
+                "rice",
+                "mustard oil",
+                "onion",
+                "green chilli"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "dinner": {
+              "name": "Bhapa Ilish",
+              "ingredients": [
+                "ilish fish",
+                "mustard oil",
+                "onion",
+                "green chilli",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            }
+          },
+          {
+            "day": "Saturday",
+            "breakfast": {
+              "name": "Luchi",
+              "ingredients": [
+                "refined flour",
+                "ghee",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            },
+            "mid_morning_snack": {
+              "name": "Shrikhand",
+              "ingredients": [
+                "curd",
+                "sugar"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "lunch": {
+              "name": "Chicken Kosha",
+              "ingredients": [
+                "chicken",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 750.0,
+              "protein_g": 32.1,
+              "carbs_g": 102.0,
+              "fat_g": 23.4
+            },
+            "evening_snack": {
+              "name": "Aloo Bhaja",
+              "ingredients": [
+                "potato",
+                "mustard oil",
+                "onion",
+                "green chilli",
+                "salt"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "dinner": {
+              "name": "Rui Macher Bhaja",
+              "ingredients": [
+                "rohu fish",
+                "mustard oil",
+                "onion",
+                "green chilli",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            }
+          },
+          {
+            "day": "Sunday",
+            "breakfast": {
+              "name": "Radhaballavi",
+              "ingredients": [
+                "refined flour",
+                "lentil",
+                "ghee",
+                "salt"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            },
+            "mid_morning_snack": {
+              "name": "Mishti Doi",
+              "ingredients": [
+                "curd",
+                "sugar"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "lunch": {
+              "name": "Egg Curry",
+              "ingredients": [
+                "egg",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 750.0,
+              "protein_g": 32.1,
+              "carbs_g": 102.0,
+              "fat_g": 23.4
+            },
+            "evening_snack": {
+              "name": "Posto Bata",
+              "ingredients": [
+                "posto",
+                "mustard oil",
+                "green chilli",
+                "garlic",
+                "salt"
+              ],
+              "calories": 250.0,
+              "protein_g": 10.7,
+              "carbs_g": 34.0,
+              "fat_g": 7.8
+            },
+            "dinner": {
+              "name": "Pomfret Curry",
+              "ingredients": [
+                "pomfret fish",
+                "mustard oil",
+                "onion",
+                "tomato",
+                "ginger"
+              ],
+              "calories": 625.0,
+              "protein_g": 26.8,
+              "carbs_g": 85.0,
+              "fat_g": 19.5
+            }
+          }
+        ]
+      },
+      "grocery_list": {
+        "items": [
+          {
+            "ingredient": "Ghee",
+            "quantity": "as needed",
+            "estimated_cost_inr": 100.0,
+            "category": "Fats & Oils"
+          },
+          {
+            "ingredient": "Ilish Fish",
+            "quantity": "as needed",
+            "estimated_cost_inr": 50.0,
+            "category": "Protein"
+          },
+          {
+            "ingredient": "Lentil",
+            "quantity": "as needed",
+            "estimated_cost_inr": 16.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Mango",
+            "quantity": "as needed",
+            "estimated_cost_inr": 16.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Mutton",
+            "quantity": "as needed",
+            "estimated_cost_inr": 16.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Pomfret Fish",
+            "quantity": "as needed",
+            "estimated_cost_inr": 50.0,
+            "category": "Protein"
+          },
+          {
+            "ingredient": "Refined Flour",
+            "quantity": "as needed",
+            "estimated_cost_inr": 16.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Salt",
+            "quantity": "as needed",
+            "estimated_cost_inr": 16.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Sugar",
+            "quantity": "as needed",
+            "estimated_cost_inr": 16.0,
+            "category": "General"
+          }
+        ],
+        "total_estimated_cost_inr": 296.0,
+        "notes": [
+          "Prices are approximate (2024 retail rates).",
+          "Buy seasonal vegetables and fruits for cost savings.",
+          "Prefer whole grains over refined grains per ICMR-NIN guidelines."
+        ]
+      },
+      "feedback_memory": {
+        "liked_meals": [],
+        "disliked_meals": [],
+        "average_ratings": {},
+        "reported_patterns": []
+      },
+      "adherence_history": [
+        {
+          "id": "ea87d8a6-ddf9-49fc-9943-b69451fd5360",
+          "created_at": "2026-05-31T09:18:47.912575+00:00",
+          "user_id": "demo-user",
+          "date": "2026-05-31",
+          "meal_type": "breakfast",
+          "meal_name": "",
+          "status": "completed",
+          "calories": null,
+          "protein_g": null,
+          "water_ml": 2000.0,
+          "weight_kg": 70.0,
+          "sleep_hours": 7.0,
+          "mood": "good",
+          "digestion": "comfortable",
+          "notes": ""
+        },
+        {
+          "id": "a5f8fb95-127e-4294-aba6-44ace18a5669",
+          "created_at": "2026-05-31T09:32:31.519553+00:00",
+          "user_id": "demo-user",
+          "date": "2026-05-31",
+          "meal_type": "breakfast",
+          "meal_name": "",
+          "status": "completed",
+          "calories": null,
+          "protein_g": null,
+          "water_ml": 2000.0,
+          "weight_kg": 70.0,
+          "sleep_hours": 7.0,
+          "mood": "good",
+          "digestion": "comfortable",
+          "notes": ""
+        }
+      ],
+      "updated_at": "2026-06-13T02:32:24.222033+00:00"
+    }
+  },
+  "chat_messages": [
+    {
+      "id": "e9375f9e-f8f7-4743-adc0-157d9fe40cfa",
+      "created_at": "2026-05-31T07:04:51.735268+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Replace paneer with a cheaper protein source"
+    },
+    {
+      "id": "32da025e-e936-40a4-84bc-d955014d8247",
+      "created_at": "2026-05-31T07:05:01.126063+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "Great idea for a budget-friendly and protein-rich swap! Here are some excellent and cheaper protein sources you can use instead of paneer, especially suitable for North Indian cuisine:\n\n*   **Soya Chunks:**\n    *   **Swap:** Use rehydrated soya chunks in curries like 'soya chunk curry' or 'soya bhurji' as a direct replacement for paneer.\n    *   **Macros:** Soya chunks are significantly lower in fat and higher in fiber than paneer, while providing comparable or even higher protein per serving. Calories will likely be similar or slightly lower depending on preparation.\n*   **Lentils (Dal):**\n    *   **Swap:** Incorporate various dals (e.g., Toor, Moong, Masoor, Chana dal) into your meals. While not a direct texture swap for paneer, a bowl of cooked dal (e.g., 1 katori/150g) with your roti or rice significantly boosts protein and fiber.\n    *   **Macros:** Dals are lower in fat, higher in complex carbohydrates and fiber, and provide good protein. Calories will be lower than paneer for a similar protein contribution.\n*   **Chickpeas (Chole) or Kidney Beans (Rajma):**\n    *   **Swap:** Prepare dishes like 'Chole Masala' or 'Rajma Curry'. These legumes are budget-friendly and versatile, offering a hearty protein and fiber source.\n    *   **Macros:** Chole and Rajma are lower in fat, higher in complex carbohydrates and fiber, and provide good plant-based protein. Calories will be similar or slightly lower than paneer depending on portion size and preparation.\n\nFor a direct protein-dense replacement in curries, soya chunks are your best bet for cost-effectiveness and protein content."
+    },
+    {
+      "id": "331f7345-b4f1-4ad9-a720-229eae226bb5",
+      "created_at": "2026-05-31T09:17:58.158496+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Replace paneer with a cheaper protein source"
+    },
+    {
+      "id": "eeea92b2-b824-4e2e-af69-38946e1bd777",
+      "created_at": "2026-05-31T09:18:00.566364+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To replace paneer with a cheaper protein source, let's consider the options I previously mentioned: soya chunks, lentils (dal), chickpeas (chole), or kidney beans (rajma). \n\nFor a direct replacement in curries, **soya chunks** are an excellent choice. They can be used in dishes like 'Soya Chunk Curry' or 'Soya Bhurji', similar to how paneer is used. \n\nLet's modify the meal plan by replacing paneer with soya chunks in the **Saag Paneer** dish on Wednesday's dinner. \n\n*   **Original Saag Paneer:** \n    *   Calories: 626.8\n    *   Protein: 26.6g\n    *   Carbs: 89.3g\n    *   Fat: 18.1g\n*   **Modified Saag Soya Chunk:**\n    *   Calories: Approximately 550-600 (slightly lower due to soya chunks having lower fat content)\n    *   Protein: 28-30g (soya chunks can provide slightly higher protein content than paneer)\n    *   Carbs: 80-85g (slightly lower complex carbohydrates)\n    *   Fat: 10-12g (significantly lower fat content)\n\nThis swap not only reduces the cost but also provides a similar or slightly higher protein content with lower fat. The calorie and carb content will be slightly lower, making it a nutritious and budget-friendly alternative. \n\nPlease note, the exact nutritional values may vary based on the specific ingredients and their quantities used in the recipe. \n\nHow does this modification sound?"
+    },
+    {
+      "id": "9d06c893-a60b-46c6-bd3e-5bdccdad3296",
+      "created_at": "2026-05-31T09:18:08.016573+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Make tomorrow breakfast high protein"
+    },
+    {
+      "id": "35c76d35-3919-432b-8943-a63d4a59989b",
+      "created_at": "2026-05-31T09:18:08.672349+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "I could not reach the AI model, so here is a safe baseline: keep meals balanced with dal/curd/eggs or lean protein, vegetables, whole grains or millets, and avoid changing medication or disease-specific restrictions without clinician guidance."
+    },
+    {
+      "id": "d6cbbb85-4c1d-4a73-8eff-ea311458139f",
+      "created_at": "2026-05-31T09:18:16.688003+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Reduce sodium in my diet"
+    },
+    {
+      "id": "22ba8c6d-8115-43dd-b87d-7188d7524061",
+      "created_at": "2026-05-31T09:18:19.093071+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To reduce sodium in your diet, let's focus on minimizing processed and packaged foods, as well as home-prepared foods high in salt. \n\nHere are some suggestions for your meal plan:\n\n*   **Limit or avoid** adding salt to your meals. Instead, use herbs and spices to add flavor.\n*   **Choose low-sodium options**: Opt for low-sodium or no-salt-added versions of packaged foods like sauces, soups, and snacks.\n*   **Incorporate potassium-rich foods**: Potassium can help balance out the effects of sodium in the body. Include foods like spinach, sweet potatoes, and bananas in your diet.\n\nLet's modify your meal plan to reduce sodium intake. For Wednesday's dinner, we can replace the **Saag Paneer** with a lower-sodium version:\n\n*   **Original Saag Paneer**:\n    *   Calories: 626.8\n    *   Protein: 26.6g\n    *   Carbs: 89.3g\n    *   Fat: 18.1g\n*   **Modified Saag Paneer (low-sodium)**:\n    *   Reduce the amount of salt added to the recipe\n    *   Use low-sodium spices and herbs for flavor\n    *   Calories: Approximately 620-625 (slightly lower due to reduced salt content)\n    *   Protein: 26-27g (similar protein content)\n    *   Carbs: 88-90g (similar complex carbohydrates)\n    *   Fat: 17-18g (similar fat content)\n\nThis modification reduces the sodium content of the dish while maintaining similar calorie and macro profiles. \n\nAdditionally, consider reducing or avoiding high-sodium foods like **papads** and **pickles** from your diet. You can replace them with lower-sodium snacks like **fresh fruits** or **roasted makhana**.\n\nRemember to stay hydrated by drinking plenty of water throughout the day. Aim for at least 8-10 glasses of water per day.\n\nPlease note that the exact nutritional values may vary based on the specific ingredients and their quantities used in the recipe. \n\nHow does this modification sound?"
+    },
+    {
+      "id": "8dfe47c2-0abb-4c79-b6f5-38994dfe323a",
+      "created_at": "2026-05-31T09:32:08.654751+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Give me a 1500 calorie version"
+    },
+    {
+      "id": "9bc785d8-86fa-4de1-a12f-715a19aac94b",
+      "created_at": "2026-05-31T09:32:11.350727+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To create a 1500 calorie version of your meal plan, I'll suggest modifications to reduce the overall calorie intake while maintaining a balanced diet. \n\nHere are the changes:\n\n*   **Reduce portion sizes**: Decrease the serving sizes of each meal to lower the calorie intake.\n*   **Swap high-calorie ingredients**: Replace some high-calorie ingredients with lower-calorie alternatives.\n*   **Remove or reduce added fats**: Limit or avoid adding extra fats like ghee, oil, or nuts to the meals.\n\nLet's modify Wednesday's meals to achieve a 1500 calorie target:\n\n*   **Breakfast**: Replace **Idli with Coconut Chutney** (626.8 calories) with **Oatmeal with Fruit** (300-350 calories)\n    *   Calories: Reduced by approximately 276-326 calories\n    *   Protein: Similar protein content (around 10-12g)\n    *   Carbs: Lower complex carbohydrates (around 50-60g)\n    *   Fat: Significantly lower fat content (around 5-7g)\n*   **Lunch**: Replace **Rajma and Vegetable Biryani** (752.1 calories) with **Brown Rice with Lentil Soup and Vegetables** (400-450 calories)\n    *   Calories: Reduced by approximately 302-352 calories\n    *   Protein: Similar protein content (around 20-22g)\n    *   Carbs: Lower complex carbohydrates (around 60-70g)\n    *   Fat: Lower fat content (around 10-12g)\n*   **Dinner**: Replace **Palak Paneer with Roti** (626.8 calories) with **Grilled Vegetable Skewers with Quinoa and Low-Fat Curd** (400-450 calories)\n    *   Calories: Reduced by approximately 176-226 calories\n    *   Protein: Similar protein content (around 20-22g)\n    *   Carbs: Lower complex carbohydrates (around 50-60g)\n    *   Fat: Lower fat content (around 10-12g)\n\nThese modifications will help reduce the overall calorie intake to approximately 1500 calories while maintaining a balanced diet with adequate protein, complex carbohydrates, and healthy fats. \n\nPlease note that the exact nutritional values may vary based on the specific ingredients and their quantities used in the recipes. \n\nHow do these modifications sound?"
+    },
+    {
+      "id": "d88100d5-63f3-4c96-a375-216a7bfccf8c",
+      "created_at": "2026-05-31T09:35:37.849127+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Make tomorrow breakfast high protein"
+    },
+    {
+      "id": "cdfde986-6f7e-403e-a2c5-4ad7707a9d7f",
+      "created_at": "2026-05-31T09:35:38.509009+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "I could not reach the AI model, so here is a safe baseline: keep meals balanced with dal/curd/eggs or lean protein, vegetables, whole grains or millets, and avoid changing medication or disease-specific restrictions without clinician guidance."
+    },
+    {
+      "id": "e126cd48-49f6-467e-986e-4df7d4baf58e",
+      "created_at": "2026-06-13T02:03:36.948667+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Give me a 1500 calorie version"
+    },
+    {
+      "id": "7687b069-636a-41d9-a766-c387d4efa7b3",
+      "created_at": "2026-06-13T02:03:37.606503+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "I could not reach the AI model, so here is a safe baseline: keep meals balanced with dal/curd/eggs or lean protein, vegetables, whole grains or millets, and avoid changing medication or disease-specific restrictions without clinician guidance."
+    },
+    {
+      "id": "48d3e829-9f9f-4805-8558-28de09ec1438",
+      "created_at": "2026-06-13T02:16:12.513667+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Make tomorrow breakfast high protein"
+    },
+    {
+      "id": "c4b41102-80ba-44d7-b558-eccb5199bbb3",
+      "created_at": "2026-06-13T02:16:34.847120+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "Okay, I can help you make tomorrow's breakfast high in protein!\n\nFor Tuesday's breakfast, we will swap out the **Panta Bhat** for a **High-Protein Bengali-style Scramble (Shredded Chicken & Egg Bhurji) with 2 small Whole Wheat Rotis**. This will significantly boost your protein intake while being mindful of your hypertension and cholesterol.\n\nHere's the modification for Tuesday's breakfast:\n\n*   **Original Breakfast**: **Panta Bhat** (rice, water, salt)\n    *   Calories: 641.2\n    *   Protein: 27.2g\n    *   Carbs: 91.2g\n    *   Fat: 18.5g\n\n*   **New High-Protein Breakfast**: **Shredded Chicken & Egg Bhurji with 2 small Whole Wheat Rotis**\n    *   **Ingredients**: 75g cooked shredded chicken, 2 eggs, 1/4 onion (finely chopped), 1/4 tomato (finely chopped), 1 green chilli (slit), a pinch of turmeric, a pinch of cumin powder, 1 tsp mustard oil for cooking. Serve with 2 small whole wheat rotis.\n    *   **Qualitative Changes**:\n        *   **Calories**: *Reduced* (approx. 505 kcal vs 641.2 kcal) – This helps manage overall calorie intake, beneficial for your cholesterol and hypertension.\n        *   **Protein**: *Significantly Increased* (approx. 43g vs 27.2g) – This provides a substantial protein boost, supporting muscle health and satiety. Eggs and chicken are also excellent sources of Vitamin B12.\n        *   **Carbs**: *Reduced* (approx. 41g vs 91.2g) – Swapping refined rice for whole wheat roti and lean protein reduces carbohydrate load, which is good for managing blood pressure and cholesterol.\n        *   **Fat**: *Similar* (approx. 17.7g vs 18.5g) – By using minimal mustard oil and lean chicken, fat content remains controlled.\n\nThis meal is practical, aligns with your preferences for chicken and eggs, and supports your health goals."
+    },
+    {
+      "id": "447dc0c6-8dc7-4efb-b8ac-515c981ebd85",
+      "created_at": "2026-06-13T02:16:45.288806+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Reduce sodium in my diet"
+    },
+    {
+      "id": "d4226f60-9ca8-4f64-aabd-7c21d808d44f",
+      "created_at": "2026-06-13T02:17:03.728791+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To reduce sodium in your diet, especially with mild hypertension, it's important to be mindful of both added salt during cooking and hidden sodium in certain ingredients.\n\nHere are some practical steps and meal modifications for you:\n\n*   **Reduce Added Salt**:\n    *   **During Cooking**: Consciously reduce the amount of salt you add to all your dishes. Start by using half the usual amount and taste before adding more.\n    *   **At the Table**: Avoid adding extra salt at the table.\n    *   **Flavor Boosters**: Use more natural flavor enhancers like ginger, garlic, green chillies, lemon juice, vinegar, and a variety of spices (cumin, coriander, turmeric, garam masala) to make your food flavorful without relying on excessive salt.\n\n*   **Limit High-Sodium Ingredients**:\n    *   **Mustard Paste (Shorshe Bata)**: While a staple in Bengali cuisine, check if your store-bought mustard paste contains added salt. If making at home, control the salt content.\n    *   **Pickles & Papads**: These are typically very high in sodium. Limit their consumption.\n    *   **Processed Foods**: Avoid packaged snacks, sauces, and bakery items, as they often contain high levels of hidden sodium (as per ICMR-NIN guidelines).\n\n*   **Increase Potassium-Rich Foods**: Potassium helps counteract the effects of sodium and is beneficial for blood pressure.\n    *   Include plenty of fresh fruits (bananas, oranges, melons) and vegetables (spinach, potatoes, tomatoes, amaranth leaves) in your diet.\n\n**Specific Meal Plan Modifications for Sodium Reduction:**\n\nLet's start with **Monday's Breakfast** and **Evening Snack** as examples:\n\n*   **Monday Breakfast: Luchi**\n    *   **Original**: Luchi (refined flour, ghee, salt) - Calories: 641.2, Protein: 27.2g, Carbs: 91.2g, Fat: 18.5g\n    *   **Swap**: Replace Luchi with **2-3 Whole Wheat Rotis (Atta Roti) and a serving of Lauki (Bottle Gourd) Sabzi**.\n        *   **Ingredients**: Whole wheat flour, water (for rotis); 1 cup chopped lauki, 1/4 onion, 1/2 tomato, a pinch of turmeric, a pinch of cumin, 1 tsp mustard oil, *minimal salt* (for sabzi).\n        *   **Qualitative Changes**:\n            *   **Sodium**: *Significantly Reduced* (by avoiding refined flour, deep-frying, and controlling salt in sabzi).\n            *   **Calories**: *Reduced* (approx. 350-400 kcal vs 641.2 kcal).\n            *   **Fiber**: *Increased* (from whole wheat and lauki).\n            *   **Fat**: *Reduced* (no deep-frying).\n            *   **Carbs**: *Shifted to complex carbs*.\n\n*   **Monday Evening Snack: Aloo Posto**\n    *   **Original**: Aloo Posto (potato, posto, onion, green chilli, mustard oil) - Calories: 256.5, Protein: 10.9g, Carbs: 36.5g, Fat: 7.4g\n    *   **Modification**: Prepare Aloo Posto with **minimal added salt**.\n        *   **Qualitative Changes**:\n            *   **Sodium**: *Reduced* (by controlling added salt).\n            *   **Calories/Macros**: Remain similar, but the sodium content will be lower.\n\n*   **General Tip for Curries**: For dishes like Bengali Fish Curry, Chicken Rezala, Shorshe Bata Ilish, etc., always aim to **reduce the amount of salt** added during preparation. Use the rich spices and fresh ingredients to bring out the flavor.\n\nBy making these conscious choices, you can effectively manage your sodium intake, which is beneficial for your mild hypertension and overall heart health."
+    },
+    {
+      "id": "dcec646e-7047-4081-833a-15e0bd66898c",
+      "created_at": "2026-06-13T02:17:30.311717+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Explain why this meal fits me"
+    },
+    {
+      "id": "3a3153eb-68f2-497e-b72c-a2bfe4abb7ff",
+      "created_at": "2026-06-13T02:17:33.246348+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To explain why your current meal plan fits you, let's break down the key aspects of your health profile and dietary preferences, and how they align with the provided meal plan.\n\n### Health Profile Considerations\n\n*   **Mild Hypertension**: The meal plan aims to manage sodium intake, which is crucial for controlling blood pressure. By using natural flavor enhancers and limiting added salt, the plan helps keep sodium levels in check.\n*   **High Cholesterol (Borderline LDL)**: The inclusion of lean proteins like chicken, fish, and eggs, along with a variety of vegetables, helps manage cholesterol levels. Omega-3 fatty acids from fish like rohu and ilish also support heart health.\n*   **Vitamin B12 Deficiency**: The regular inclusion of animal-based foods like eggs, chicken, and fish ensures a steady supply of vitamin B12, addressing the deficiency.\n\n### Dietary Preferences and Lifestyle\n\n*   **Non-Vegetarian Preference**: The meal plan incorporates a variety of non-vegetarian options, including fish, chicken, and mutton, catering to your preference.\n*   **Bengali Cuisine**: The plan respects your regional cuisine preference, incorporating traditional Bengali dishes like shorshe bata, aloo posto, and doi, making the diet more enjoyable and culturally relevant.\n*   **Moderately Active**: The calorie intake is balanced to support your activity level, ensuring you have enough energy for daily activities without excessive calorie consumption.\n\n### Meal Plan Modifications\n\nBased on your recent requests, two significant modifications were made:\n\n1.  **High-Protein Breakfast**: Swapping **Panta Bhat** for a **High-Protein Bengali-style Scramble (Shredded Chicken & Egg Bhurji) with 2 small Whole Wheat Rotis** on Tuesday. This change:\n    *   Reduces calories (approx. 505 kcal vs 641.2 kcal).\n    *   Significantly increases protein (approx. 43g vs 27.2g), supporting muscle health and satiety.\n2.  **Sodium Reduction**: General advice to reduce added salt, limit high-sodium ingredients, and use natural flavor enhancers. This helps manage sodium intake, beneficial for your hypertension.\n\nThese modifications and the overall meal plan are designed to cater to your specific health needs, dietary preferences, and lifestyle, aiming to provide a balanced and enjoyable diet that supports your overall well-being."
+    },
+    {
+      "id": "a2efb169-9136-4dd1-8853-b16f1dc56e5a",
+      "created_at": "2026-06-13T02:17:49.584882+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Add more iron-rich foods"
+    },
+    {
+      "id": "0d628997-e828-4cbe-a9c2-29789f89f2e6",
+      "created_at": "2026-06-13T02:18:08.471405+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To increase the iron content in your diet, especially with your existing health profile, we can incorporate more iron-rich foods and ensure better absorption.\n\nHere are some modifications to your meal plan:\n\n*   **Monday Mid-morning Snack Swap:**\n    *   **Original**: **Mishti Doi** (curd, sugar)\n        *   Calories: 256.5, Protein: 10.9g, Carbs: 36.5g, Fat: 7.4g\n    *   **New Iron-Rich Snack**: **Sprouted Moong Dal Salad with Pomegranate**\n        *   **Ingredients**: 1/2 cup sprouted moong dal, 1/4 cup pomegranate seeds, finely chopped onion, tomato, green chilli, a squeeze of lemon juice, a pinch of chaat masala.\n        *   **Qualitative Changes**:\n            *   **Calories**: *Reduced* (approx. 180-220 kcal vs 256.5 kcal) – Beneficial for managing overall calorie intake and cholesterol.\n            *   **Protein**: *Similar/Slightly Increased* (approx. 12-15g vs 10.9g) – Supports muscle health.\n            *   **Carbs**: *Reduced* (approx. 30-35g vs 36.5g).\n            *   **Fat**: *Significantly Reduced* (very low fat vs 7.4g) – Good for cholesterol management.\n            *   **Iron**: *Significantly Increased* (Sprouted moong dal is a good plant-based iron source, and pomegranate provides Vitamin C, which enhances iron absorption).\n            *   **Fiber**: *Increased* – Aids digestion and cholesterol management.\n            *   **Sodium**: *Reduced* (no added sugar, minimal salt).\n\n*   **Sunday Mid-morning Snack Swap:**\n    *   **Original**: **Coconut Laddu** (coconut, sugar, ghee)\n        *   Calories: 256.5, Protein: 10.9g, Carbs: 36.5g, Fat: 7.4g\n    *   **New Iron-Rich Snack**: **Palak Paneer Bhurji (dry) with 1 small Whole Wheat Roti**\n        *   **Ingredients**: 100g spinach (palak), 50g paneer (crumbled), 1/4 onion, 1/4 tomato, ginger-garlic paste, green chilli, minimal mustard oil (1 tsp), spices. Serve with 1 small whole wheat roti.\n        *   **Qualitative Changes**:\n            *   **Calories**: *Similar/Slightly Reduced* (approx. 200-250 kcal vs 256.5 kcal) – Helps manage calorie intake.\n            *   **Protein**: *Increased* (approx. 15-20g vs 10.9g) – Excellent for satiety and muscle maintenance.\n            *   **Carbs**: *Similar/Slightly Reduced* (approx. 25-30g vs 36.5g).\n            *   **Fat**: *Similar/Slightly Reduced* (approx. 5-7g vs 7.4g, depending on oil used) – Paneer provides healthy fats in moderation.\n            *   **Iron**: *Significantly Increased* (Spinach is a powerhouse of non-haem iron).\n            *   **Fiber**: *Increased* (from spinach and whole wheat roti) – Good for digestion and heart health.\n            *   **Sodium**: *Controlled* (if minimal salt is used during cooking).\n\n**General Tips for Increasing Iron and Absorption:**\n\n*   **Include Vitamin C**: Always pair plant-based iron sources (like dals, spinach) with Vitamin C-rich foods (e.g., a squeeze of lemon juice on your dal, a small bowl of guava or orange).\n*   **Cook in Iron Utensils**: Using an iron kadai or pan can subtly increase the iron content of your food.\n*   **Limit Tea/Coffee with Meals**: Tannins in tea and coffee can inhibit iron absorption. Try to consume them between meals rather than immediately before or after.\n*   **Lean Meats and Fish**: Continue to include fish (like rohu, ilish) and chicken regularly, as they provide haem iron, which is easily absorbed. Mutton (lean cuts) can be included occasionally.\n*   **Other Iron-Rich Foods**: Consider adding other leafy greens like fenugreek (methi) or drumstick leaves (sajna pata) to your curries or as a side sabzi. Include a variety of dals and legumes like chana dal."
+    },
+    {
+      "id": "9e6d5c87-58e7-4b3b-938c-50bf53d52e6a",
+      "created_at": "2026-06-13T02:18:41.236555+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "provide me list of exercise that I should do that will benefit me in my disease"
+    },
+    {
+      "id": "6a3b65f5-9e37-40da-a38d-6f9a5408aca3",
+      "created_at": "2026-06-13T02:18:49.173652+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "As an AI Nutrition Assistant, I can provide general guidance on physical activity that is beneficial for overall health and can support the management of conditions like mild hypertension and high cholesterol. However, I cannot prescribe specific exercise routines. It is crucial to consult with your doctor or a qualified fitness professional before starting any new exercise program, especially given your health conditions and medications. They can assess your individual health status and recommend a safe and effective plan tailored for you.\n\nHere are general types of physical activity that can be beneficial for your health profile:\n\n*   **Aerobic Exercises (Cardio)**: These are excellent for heart health, blood pressure management, and improving cholesterol levels.\n    *   **Examples**: Brisk walking (aim for 30-45 minutes most days of the week), jogging, cycling, swimming, dancing, or even active household chores like sweeping and mopping.\n    *   **Benefit**: Helps strengthen your heart, lower blood pressure, improve circulation, and can help manage weight, which positively impacts cholesterol.\n    *   **ICMR-NIN Guideline**: Aim for at least 60 minutes of leisure time physical activity daily, which can include aerobic exercise.\n\n*   **Strength Training**: Incorporating strength exercises helps build muscle mass, which can boost metabolism, improve bone density, and contribute to better blood sugar and cholesterol control.\n    *   **Examples**: Bodyweight exercises like squats, lunges, push-ups (even against a wall), using resistance bands, or lifting light weights.\n    *   **Benefit**: Supports overall body composition, which is beneficial for managing hypertension and cholesterol.\n    *   **ICMR-NIN Guideline**: Include activities that enhance strength and functional balance for three days or more in a week.\n\n*   **Flexibility and Balance Exercises**: Yoga and stretching can improve flexibility, reduce stress, and enhance overall well-being.\n    *   **Examples**: Gentle yoga postures, stretching routines.\n    *   **Benefit**: Stress reduction can indirectly help with blood pressure management.\n\n**Practical Tips for a Bank Employee with a Moderately Active Lifestyle**:\n\n*   **Break up prolonged sitting**: If your job involves long hours of sitting, try to take short breaks every hour to stand, stretch, or walk around for a few minutes.\n*   **Active Commute**: If possible, walk or cycle part of the way to work.\n*   **Weekend Activities**: Engage in more vigorous activities on weekends like hiking, playing sports, or longer walks in a park.\n\n**Important Safety Warning**:\nAlways consult your doctor before starting any new exercise regimen, especially with mild hypertension and high cholesterol. They can advise on appropriate intensity and duration, and ensure it's safe with your current medications (Telmisartan 40mg). Listen to your body and stop if you experience any pain, dizziness, or discomfort."
+    },
+    {
+      "id": "a8858662-a520-4ce0-b230-e9a5011af86f",
+      "created_at": "2026-06-13T02:31:59.561835+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Make tomorrow breakfast high protein"
+    },
+    {
+      "id": "5b01d020-5e83-4a62-b2e2-5c2aa7399053",
+      "created_at": "2026-06-13T02:32:13.897716+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "Okay, let's make tomorrow's breakfast (Monday) high in protein while keeping your health profile and preferences in mind.\n\nYour current Monday breakfast is Luchi, which is high in refined carbohydrates and fat, and while the provided protein value is 26.8g, we can enhance the protein quality and overall nutritional profile.\n\nHere's a high-protein breakfast swap for Monday:\n\n*   **Monday Breakfast Swap:**\n    *   **Original**: **Luchi** (refined flour, ghee, salt)\n        *   Calories: 625.0, Protein: 26.8g, Carbs: 85.0g, Fat: 19.5g\n    *   **New High-Protein Breakfast**: **Egg Bhurji with 2 Whole Wheat Rotis and a side of Cucumber Salad**\n        *   **Ingredients**: 3 eggs, 1 small onion (chopped), 1 small tomato (chopped), 1 green chilli (chopped), 1 tsp mustard oil, pinch of turmeric, salt to taste. Serve with 2 whole wheat rotis and 1/2 cucumber (sliced).\n        *   **Qualitative Changes**:\n            *   **Calories**: *Similar* (approx. 550-650 kcal, depending on oil usage and roti size) – Maintains your energy target.\n            *   **Protein**: *Increased* (approx. 28-32g from eggs and whole wheat vs 26.8g) – Eggs are a complete protein source, excellent for muscle health and satiety, and contribute to your B12 needs.\n            *   **Carbs**: *Shifted to complex carbohydrates* (Whole wheat roti vs refined flour luchi) – Provides sustained energy, better for blood sugar management, and beneficial for high cholesterol. *Overall carbs slightly reduced* (approx. 60-70g vs 85g).\n            *   **Fat**: *Potentially reduced* (Less oil than deep-fried luchi, and healthier fats from eggs) – Good for managing borderline high LDL cholesterol. *Approx. 15-20g vs 19.5g*.\n            *   **Fiber**: *Significantly Increased* (Whole wheat roti, vegetables in bhurji and cucumber salad) – Aids digestion and helps manage cholesterol and blood pressure.\n            *   **Sodium**: Can be controlled by limiting added salt in the bhurji, which is important for your mild hypertension."
+    },
+    {
+      "id": "3355e8f0-6218-4ba5-ba4f-fc0b7673a65c",
+      "created_at": "2026-06-13T02:32:24.226249+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Reduce sodium in my diet"
+    },
+    {
+      "id": "9e39baa7-7027-4bd7-8e68-d4a9f7623d29",
+      "created_at": "2026-06-13T02:32:49.873797+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To help reduce sodium in your diet, especially important for managing mild hypertension, we'll focus on reducing added salt in your cooking and making smart swaps for high-sodium items. Your daily sodium target is 1500mg, and many traditional Bengali preparations can be high in salt.\n\nHere are some modifications to your meal plan, starting with Monday, and general advice for the week:\n\n*   **Monday Breakfast Swap:**\n    *   **Original**: **Luchi** (refined flour, ghee, salt)\n        *   Calories: 625.0, Protein: 26.8g, Carbs: 85.0g, Fat: 19.5g\n    *   **New High-Protein, Low-Sodium Breakfast**: **3-Egg Bhurji with Spinach, 2 Whole Wheat Rotis, and a small bowl of Masoor Dal (low salt)**\n        *   **Ingredients**: 3 eggs, 1 cup chopped spinach, 1 small onion (chopped), 1 small tomato (chopped), 1 green chilli (chopped), 1 tsp mustard oil, pinch of turmeric, black pepper, *minimal salt* to taste. Serve with 2 whole wheat rotis and 1/2 cup cooked masoor dal (prepared with *very little salt*).\n        *   **Qualitative Changes**:\n            *   **Calories**: *Similar* (approx. 580-680 kcal) – Maintains energy target.\n            *   **Protein**: *Increased* (approx. 35-40g from eggs, dal, whole wheat vs 26.8g) – Excellent for protein target and B12.\n            *   **Carbs**: *Similar* (approx. 70-90g) – Focus on complex carbohydrates from whole wheat and dal.\n            *   **Fat**: *Similar/Slightly Reduced* (approx. 18-22g) – Healthier fats from eggs and minimal oil.\n            *   **Sodium**: *Significantly Reduced* – By consciously adding less salt during preparation and using whole wheat instead of refined flour. Spinach and dal also add beneficial potassium.\n            *   **Fiber**: *Increased* – From whole wheat, spinach, and dal, beneficial for cholesterol and digestion.\n\n*   **Monday Mid-morning Snack Swap:**\n    *   **Original**: **Mishti Doi** (curd, sugar)\n        *   Calories: 250.0, Protein: 10.7g, Carbs: 34.0g, Fat: 7.8g\n    *   **New Low-Sodium Snack**: **Plain Curd (Doi) with a handful of seasonal fruit (e.g., apple slices or guava)**\n        *   **Ingredients**: 1 cup plain curd, 1 small apple or guava (sliced).\n        *   **Qualitative Changes**:\n            *   **Calories**: *Reduced* (approx. 180-220 kcal) – Good for overall calorie management.\n            *   **Protein**: *Similar* (approx. 10-12g) – Maintains protein intake.\n            *   **Carbs**: *Similar* (approx. 30-35g) – Natural sugars from fruit, no added sugar.\n            *   **Fat**: *Similar* (approx. 7-8g) – Healthy fats from curd.\n            *   **Sodium**: *Significantly Reduced* – No added salt or sugar.\n            *   **Fiber**: *Increased* – From fruit, beneficial for digestion and cholesterol.\n\n*   **Monday Evening Snack Swap:**\n    *   **Original**: **Aloo Posto** (potato, posto, mustard oil, onion, green chilli)\n        *   Calories: 250.0, Protein: 10.7g, Carbs: 34.0g, Fat: 7.8g\n    *   **New Low-Sodium Snack**: **Handful of Roasted Chana (Bengal Gram) or a small bowl of Cucumber and Carrot Salad**\n        *   **Ingredients**: 1/2 cup roasted chana (unsalted) OR 1/2 cup sliced cucumber and carrot with a squeeze of lemon.\n        *   **Qualitative Changes**:\n            *   **Calories**: *Reduced* (approx. 100-150 kcal) – Lighter snack.\n            *   **Protein**: *Similar/Slightly Reduced* (approx. 8-10g from chana, very low from salad) – Chana provides good plant protein.\n            *   **Carbs**: *Reduced* (approx. 15-25g) – Lower carbohydrate intake.\n            *   **Fat**: *Significantly Reduced* (very low fat) – Excellent for cholesterol management.\n            *   **Sodium**: *Significantly Reduced* – Unsalted chana or fresh vegetables are naturally low in sodium.\n            *   **Fiber**: *Increased* – From chana and vegetables, beneficial for digestion and satiety.\n\n**General Sodium Reduction Tips for Your Diet:**\n\n*   **Reduce Added Salt in Cooking:** Consciously reduce the amount of salt you add to all your curries, dals, and vegetable preparations throughout the week. Start with half the usual amount and taste before adding more.\n*   **Flavor with Herbs & Spices:** Rely more on fresh ginger, garlic, green chillies, coriander, cumin, turmeric, and a squeeze of lemon juice to enhance flavor instead of salt.\n*   **Avoid Table Salt:** Do not keep a salt shaker on the dining table.\n*   **Limit High-Sodium Condiments:** Reduce consumption of pickles, papads, and processed chutneys, as these are typically very high in sodium.\n*   **Choose Fresh Over Processed:** Opt for fresh fruits, vegetables, and homemade snacks instead of packaged items like chips, namkeen, and biscuits, which are often high in sodium.\n*   **Cooking Methods for Fish:** When preparing fish (Ilish Machh Bhaja, Rui Macher Bhaja, Pomfret Fry), consider baking, grilling, or steaming more often instead of deep-frying, and use minimal salt in marinades.\n*   **Check Labels:** When purchasing any packaged food, always check the nutrition label for sodium content."
+    }
+  ],
+  "meal_feedback": [],
+  "adherence_logs": [
+    {
+      "id": "ea87d8a6-ddf9-49fc-9943-b69451fd5360",
+      "created_at": "2026-05-31T09:18:47.912575+00:00",
+      "user_id": "demo-user",
+      "date": "2026-05-31",
+      "meal_type": "breakfast",
+      "meal_name": "",
+      "status": "completed",
+      "calories": null,
+      "protein_g": null,
+      "water_ml": 2000.0,
+      "weight_kg": 70.0,
+      "sleep_hours": 7.0,
+      "mood": "good",
+      "digestion": "comfortable",
+      "notes": ""
+    },
+    {
+      "id": "a5f8fb95-127e-4294-aba6-44ace18a5669",
+      "created_at": "2026-05-31T09:32:31.519553+00:00",
+      "user_id": "demo-user",
+      "date": "2026-05-31",
+      "meal_type": "breakfast",
+      "meal_name": "",
+      "status": "completed",
+      "calories": null,
+      "protein_g": null,
+      "water_ml": 2000.0,
+      "weight_kg": 70.0,
+      "sleep_hours": 7.0,
+      "mood": "good",
+      "digestion": "comfortable",
+      "notes": ""
+    }
+  ],
+  "notifications": []
+}

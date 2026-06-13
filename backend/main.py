@@ -14,6 +14,7 @@ from fastapi.responses import JSONResponse
 from loguru import logger
 
 from backend.config import get_settings
+from backend.services.llm_service import get_task_model
 from backend.utils.logger import configure_logger
 
 # ── Routers ───────────────────────────────────────────────────────────────────
@@ -22,6 +23,11 @@ from backend.routers import (
     meal_plan_router,
     ingredient_router,
     grocery_router,
+    chat_router,
+    feedback_router,
+    adherence_router,
+    analytics_router,
+    reminders_router,
 )
 
 configure_logger()
@@ -30,7 +36,7 @@ settings = get_settings()
 app = FastAPI(
     title="AI Dietitian API",
     description=(
-        "Personalized Indian AI Dietitian powered by BioMistral + RAG (ICMR-NIN 2024). "
+        "Personalized Indian AI Dietitian powered by hosted LLMs + RAG (ICMR-NIN 2024). "
         "⚠️ For informational purposes only — not a substitute for medical advice."
     ),
     version="1.0.0",
@@ -51,7 +57,11 @@ app.include_router(nutrients_router.router, prefix="/predict-nutrients", tags=["
 app.include_router(meal_plan_router.router, prefix="/generate-meal-plan", tags=["Meal Plan"])
 app.include_router(ingredient_router.router, prefix="/validate-ingredients", tags=["Ingredients"])
 app.include_router(grocery_router.router, prefix="/generate-grocery-list", tags=["Grocery"])
-
+app.include_router(chat_router.router, prefix="/chat", tags=["AI Chatbot"])
+app.include_router(feedback_router.router, prefix="/feedback", tags=["Feedback Learning"])
+app.include_router(adherence_router.router, prefix="/adherence", tags=["Adherence Calendar"])
+app.include_router(analytics_router.router, prefix="/analytics", tags=["AI Health Insights"])
+app.include_router(reminders_router.router, prefix="/reminders", tags=["Reminders"])
 
 # ── Global exception handler ──────────────────────────────────────────────────
 @app.exception_handler(Exception)
@@ -75,7 +85,14 @@ async def value_error_handler(request: Request, exc: ValueError) -> JSONResponse
 # ── Health check ──────────────────────────────────────────────────────────────
 @app.get("/health", tags=["System"])
 async def health_check() -> dict:
-    return {"status": "healthy", "model": settings.ollama_model, "provider": settings.llm_provider}
+    meal_provider, meal_model = get_task_model("meal_plan")
+    return {
+        "status": "healthy",
+        "model": settings.active_model_name,
+        "provider": settings.llm_provider,
+        "meal_planning_provider": meal_provider,
+        "meal_planning_model": meal_model,
+    }
 
 
 @app.get("/", tags=["System"])

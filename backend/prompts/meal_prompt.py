@@ -1,118 +1,106 @@
-"""
-prompts/meal_prompt.py
-Prompt builder for the Dynamic Meal Planner Agent.
-Generates meal plan one day at a time to avoid token truncation.
-"""
+"""Prompt builder for fully personalized LLM meal planning."""
 from __future__ import annotations
+
 import json
 
-MEAL_SYSTEM = """You are an expert Indian dietitian and culinary specialist.
-Generate a structured Indian meal plan for ONE day that:
-- Meets the patient's daily nutrient targets
-- Respects dietary preferences, allergies, and dislikes
-- Uses available pantry ingredients where possible
-- Follows ICMR-NIN 2024 guidelines for Indian meal patterns
-- Uses authentic Indian regional recipes
-Respond with ONLY valid JSON for that single day. No explanations, no markdown fences."""
+MEAL_SYSTEM = """You are an expert Indian dietitian and culinary planner.
+Return only one valid compact JSON object. Never use markdown or explanatory text.
+Create authentic personalized meals from the supplied user data. Do not use a fixed menu.
+Strictly exclude allergens, disliked foods, and foods incompatible with the dietary preference.
+Prefer the requested Indian regional cuisine and pantry ingredients where practical."""
 
 
 def build_single_day_prompt(
     *,
     day_name: str,
+    day_number: int,
     daily_targets: dict,
+    health_profile: dict,
+    medication_warnings: list[str],
     preference_profile: dict,
-    pantry: list[str],
     used_meals: list[str],
     icmr_context: list[str],
 ) -> str:
-    context_text = "\n---\n".join(icmr_context) if icmr_context else ""
-    pantry_str = ", ".join(pantry) if pantry else "Not specified"
-    used_str = ", ".join(used_meals) if used_meals else "None yet"
+    return f"""Generate day {day_number} of 7: {day_name}.
 
-    return f"""
-### Day: {day_name}
+USER HEALTH PROFILE:
+{json.dumps(health_profile, ensure_ascii=True)}
 
-### Daily Nutrient Targets
-{json.dumps(daily_targets, indent=2)}
+PREFERENCES AND PANTRY:
+{json.dumps(preference_profile, ensure_ascii=True)}
 
-### Patient Preferences
-- Dietary Type: {preference_profile.get('dietary_preference')}
-- Likes: {preference_profile.get('likes', [])}
-- Dislikes: {preference_profile.get('dislikes', [])}
-- Allergies: {preference_profile.get('allergies', [])}
-- Regional Cuisine: {preference_profile.get('regional_cuisine', 'North Indian')}
-- Cooking Skill: {preference_profile.get('cooking_skill', 'intermediate')}
-- Budget: {preference_profile.get('budget', 'medium')}
+NUTRIENT ANALYSIS TARGETS:
+{json.dumps(daily_targets, ensure_ascii=True)}
 
-### Available Pantry
-{pantry_str}
+MEDICATION AND FOOD CAUTIONS:
+{json.dumps(medication_warnings, ensure_ascii=True)}
 
-### Already Used Meals This Week (DO NOT REPEAT)
-{used_str}
+MEALS ALREADY USED THIS WEEK - DO NOT REPEAT:
+{json.dumps(used_meals, ensure_ascii=True)}
 
-### ICMR-NIN Context
-{context_text}
+ICMR-NIN CONTEXT:
+{json.dumps(icmr_context, ensure_ascii=True)}
 
-### Task
-Generate the meal plan for {day_name} only.
-Include: breakfast, mid_morning_snack, lunch, evening_snack, dinner.
-Each meal must have: name, ingredients (list), calories, protein_g, carbs_g, fat_g, recipe_steps (3-4 steps max).
+Generate breakfast, mid_morning_snack, lunch, evening_snack, and dinner.
+Use the dietary preference exactly: vegetarian excludes meat, fish and eggs; vegan also excludes dairy;
+eggetarian permits eggs but excludes meat and fish; non_vegetarian permits animal foods.
+Use the requested regional Indian cuisine even when it is not a common preset. Favor pantry items,
+stay within the requested budget, match the cooking skill, and keep each day close to nutrient targets.
+Use distinct dishes throughout the week. Keep the JSON compact: use 3-5 short ingredients per meal.
+The backend will calculate portions, nutrients, time, cost and grocery quantities.
 
-Respond with ONLY this JSON (no markdown, no extra text):
+Return only this compact JSON shape. Populate all five meal objects.
+Every `n` value must be a specific authentic dish name, never `breakfast`, `snack`, `lunch`, or `dinner`:
 {{
-  "day": "{day_name}",
-  "breakfast": {{
-    "name": "<str>",
-    "ingredients": ["<str>"],
-    "calories": <num>,
-    "protein_g": <num>,
-    "carbs_g": <num>,
-    "fat_g": <num>,
-    "recipe_steps": ["<str>"]
-  }},
-  "mid_morning_snack": {{
-    "name": "<str>",
-    "ingredients": ["<str>"],
-    "calories": <num>,
-    "protein_g": <num>,
-    "carbs_g": <num>,
-    "fat_g": <num>,
-    "recipe_steps": ["<str>"]
-  }},
-  "lunch": {{
-    "name": "<str>",
-    "ingredients": ["<str>"],
-    "calories": <num>,
-    "protein_g": <num>,
-    "carbs_g": <num>,
-    "fat_g": <num>,
-    "recipe_steps": ["<str>"]
-  }},
-  "evening_snack": {{
-    "name": "<str>",
-    "ingredients": ["<str>"],
-    "calories": <num>,
-    "protein_g": <num>,
-    "carbs_g": <num>,
-    "fat_g": <num>,
-    "recipe_steps": ["<str>"]
-  }},
-  "dinner": {{
-    "name": "<str>",
-    "ingredients": ["<str>"],
-    "calories": <num>,
-    "protein_g": <num>,
-    "carbs_g": <num>,
-    "fat_g": <num>,
-    "recipe_steps": ["<str>"]
-  }},
-  "daily_totals": {{
-    "calories": <num>,
-    "protein_g": <num>,
-    "carbs_g": <num>,
-    "fat_g": <num>,
-    "fiber_g": <num>,
-    "water_ml": <num>
-  }}
-}}
-"""
+  "b":{{"n":"breakfast dish","i":["ingredient"]}},
+  "m":{{"n":"mid-morning snack","i":["ingredient"]}},
+  "l":{{"n":"lunch dish","i":["ingredient"]}},
+  "e":{{"n":"evening snack","i":["ingredient"]}},
+  "d":{{"n":"dinner dish","i":["ingredient"]}}
+}}"""
+
+
+def build_week_prompt(
+    *,
+    daily_targets: dict,
+    health_profile: dict,
+    medication_warnings: list[str],
+    preference_profile: dict,
+    icmr_context: list[str],
+) -> str:
+    return f"""Generate a personalized 7-day Indian meal plan.
+
+USER HEALTH PROFILE:
+{json.dumps(health_profile, ensure_ascii=True)}
+
+PREFERENCES AND PANTRY:
+{json.dumps(preference_profile, ensure_ascii=True)}
+
+DAILY NUTRIENT ANALYSIS TARGETS:
+{json.dumps(daily_targets, ensure_ascii=True)}
+
+MEDICATION AND FOOD CAUTIONS:
+{json.dumps(medication_warnings, ensure_ascii=True)}
+
+ICMR-NIN CONTEXT:
+{json.dumps(icmr_context, ensure_ascii=True)}
+
+Generate exactly seven distinct days: Monday through Sunday.
+Each day needs breakfast, mid-morning snack, lunch, evening snack, and dinner.
+Use specific authentic dish names, not generic labels. Avoid repeating dishes.
+Strictly exclude allergies, dislikes, and foods incompatible with the dietary preference.
+Use the requested regional Indian cuisine, pantry ingredients, cooking skill, and budget.
+The backend calculates portions, nutrients, prep time, cost, and grocery quantities.
+Return only compact valid JSON in this exact shape:
+{{
+  "week":[
+    {{
+      "day":"Monday",
+      "b":{{"n":"specific breakfast dish","i":["ingredient"]}},
+      "m":{{"n":"specific mid-morning snack","i":["ingredient"]}},
+      "l":{{"n":"specific lunch dish","i":["ingredient"]}},
+      "e":{{"n":"specific evening snack","i":["ingredient"]}},
+      "d":{{"n":"specific dinner dish","i":["ingredient"]}}
+    }}
+  ]
+}}"""

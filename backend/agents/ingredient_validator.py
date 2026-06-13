@@ -74,7 +74,7 @@ class IngredientValidatorAgent:
             nutrient_targets=nutrient_targets,
         )
         try:
-            result = await llm_service.generate_json(prompt, system=SUBSTITUTION_SYSTEM)
+            result = await llm_service.generate_json(prompt, system=SUBSTITUTION_SYSTEM, task="substitution")
             return SubstitutionAlert(**result)
         except Exception as exc:
             logger.warning("Substitution LLM call failed for '{}': {}", missing, exc)

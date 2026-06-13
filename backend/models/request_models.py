@@ -5,7 +5,7 @@ Pydantic v2 request schemas for all API endpoints.
 from __future__ import annotations
 
 from enum import Enum
-from typing import List, Optional
+from typing import Any, Literal, List, Optional
 
 from pydantic import BaseModel, Field, model_validator
 
@@ -110,3 +110,62 @@ class IngredientValidationRequest(BaseModel):
 class GroceryListRequest(BaseModel):
     meal_plan: dict
     pantry_ingredients: List[str]
+class UserContextPayload(BaseModel):
+    user_id: str = "demo-user"
+    health_profile: Optional[HealthProfile] = None
+    preference_profile: Optional[PreferenceProfile] = None
+    daily_targets: Optional[dict[str, Any]] = None
+    meal_plan: Optional[dict[str, Any]] = None
+    grocery_list: Optional[dict[str, Any]] = None
+
+
+class ChatRequest(UserContextPayload):
+    message: str = Field(..., min_length=1, max_length=2000)
+    stream: bool = True
+
+
+class MealFeedbackRequest(BaseModel):
+    user_id: str = "demo-user"
+    date: str
+    day: str
+    meal_type: str
+    meal_name: str
+    rating: int = Field(..., ge=1, le=5)
+    liked: Optional[bool] = None
+    difficulty: Optional[Literal["easy", "moderate", "hard"]] = None
+    taste_preference: Optional[str] = None
+    digestion: Optional[Literal["comfortable", "heavy", "acidic", "bloated"]] = None
+    hunger_level: Optional[Literal["still_hungry", "satisfied", "too_full"]] = None
+    energy_level: Optional[Literal["low", "steady", "high"]] = None
+    notes: str = Field(default="", max_length=1000)
+
+
+class AdherenceLogRequest(BaseModel):
+    user_id: str = "demo-user"
+    date: str
+    meal_type: str
+    meal_name: str = ""
+    status: Literal["completed", "partial", "skipped"]
+    calories: Optional[float] = None
+    protein_g: Optional[float] = None
+    water_ml: Optional[float] = None
+    weight_kg: Optional[float] = None
+    sleep_hours: Optional[float] = None
+    mood: Optional[Literal["low", "okay", "good", "great"]] = None
+    digestion: Optional[Literal["comfortable", "heavy", "acidic", "bloated"]] = None
+    notes: str = Field(default="", max_length=1000)
+
+
+class AnalyticsRequest(UserContextPayload):
+    nutrient_intake: Optional[dict[str, Any]] = None
+    nutrient_intake: Optional[dict[str, Any]] = None
+
+
+class ReminderRequest(BaseModel):
+    user_id: str = "demo-user"
+    reminder_type: Literal["meal", "hydration", "supplement", "grocery", "adherence"]
+    title: str = Field(..., min_length=2, max_length=120)
+    schedule: str = Field(..., description="Human-readable schedule or cron expression")
+    channel: Literal["in_app", "email", "push", "whatsapp_ready"] = "in_app"
+    enabled: bool = True
+    metadata: dict[str, Any] = Field(default_factory=dict)
