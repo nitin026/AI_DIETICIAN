@@ -286,3 +286,6 @@ The project currently stores runtime data in `data/app_state.json` through a sma
 - Add automated tests for API contracts, nutrition calculations, and agent output validation.
 
 
+## Author
+
+Built by *Nitin Tiwari and Akshita Bhansali* as an AI-assisted Indian nutrition planning project.
