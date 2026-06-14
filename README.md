@@ -285,10 +285,4 @@ The project currently stores runtime data in `data/app_state.json` through a sma
 - Review all medical and nutrition guidance with qualified professionals before public use.
 - Add automated tests for API contracts, nutrition calculations, and agent output validation.
 
-## License
 
-This project currently does not include a license file. Add one before distributing or accepting external contributions.
-
-## Author
-
-Built by **Nitin** as an AI-assisted Indian nutrition planning project.
