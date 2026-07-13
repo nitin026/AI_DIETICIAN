@@ -304,16 +304,13 @@ This project has been extended from a nutrition planner into a clinic communicat
 The communication workflow uses a provider adapter boundary:
 
 - `MockCommunicationProvider` keeps the demo local and deterministic.
-- `PlivoReadyProvider` preserves the delivery contract for a future real Plivo integration.
+- `ReadyProvider` preserves the delivery contract for a future real Plivo integration.
 - The rest of the application calls `send_message(...)` and does not need to know which provider is active.
 
 Relevant environment variables:
 
 ```env
-COMMUNICATION_PROVIDER=mock
-PLIVO_AUTH_ID=
-PLIVO_AUTH_TOKEN=
-PLIVO_SOURCE_NUMBER=
+
 ```
 
 Provider status is exposed through:
