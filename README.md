@@ -1,4 +1,4 @@
-﻿# AI Dietitian
+# AI Dietitian
 
 Personalized Indian nutrition planning assistant powered by FastAPI, Streamlit, hosted or local LLMs, and RAG over ICMR-NIN dietary guidelines.
 
@@ -350,11 +350,7 @@ The communication layer is intentionally provider-agnostic. The current `mock` p
 - Review all medical and nutrition guidance with qualified professionals before public use.
 - Add automated tests for API contracts, nutrition calculations, and agent output validation.
 
-## License
-
-This project currently does not include a license file. Add one before distributing or accepting external contributions.
 
 ## Author
 
-Built by **Nitin & Akshita** as an AI-assisted Indian nutrition planning project.
-
+Built by *Nitin Tiwari and Akshita Bhansali* as an AI-assisted Indian nutrition planning project.
