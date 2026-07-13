@@ -1,4 +1,4 @@
-# AI Dietitian
+﻿# AI Dietitian
 
 Personalized Indian nutrition planning assistant powered by FastAPI, Streamlit, hosted or local LLMs, and RAG over ICMR-NIN dietary guidelines.
 
@@ -19,7 +19,7 @@ The project is designed as a local-first prototype with clear API boundaries:
 - **Backend:** FastAPI service with Pydantic request and response contracts
 - **LLM layer:** Groq, Gemini, HuggingFace, Ollama, or BioMistral through a unified service
 - **RAG layer:** FAISS vector store built from the ICMR-NIN dietary guidelines PDF
-- **Persistence:** Local JSON storage for chat history, feedback, adherence logs, reminders, and profile context
+- **Persistence:** SQLite database via SQLAlchemy for chat history, feedback, adherence logs, reminders, and profile context
 
 ## Key Features
 
@@ -52,7 +52,7 @@ FastAPI Backend (localhost:8000)
   |-- RAG retriever: FAISS vector store over ICMR-NIN PDF
   |-- Agents: clinical analysis, meal planning, ingredients, grocery list
   |-- Personalization: feedback memory, adherence summary, analytics
-  |-- Storage: local JSON document store
+  |-- Storage: SQLite via SQLAlchemy
   |
   v
 LLM Providers
@@ -147,7 +147,6 @@ PDF_PATH=./data/Dietary_Guidelines_ICMR_NIN.pdf
 TOP_K_RETRIEVAL=5
 
 BACKEND_URL=http://localhost:8000
-STORAGE_PATH=./data/app_state.json
 ```
 
 Do not commit real API keys. Keep secrets in your local `.env` file or deployment secret manager.
@@ -214,6 +213,7 @@ http://localhost:8501
 | `POST` | `/analytics` | Generate nutrient adequacy, adherence, and health insights |
 | `POST` | `/reminders` | Store reminder or notification configuration |
 | `GET` | `/reminders/{user_id}` | Fetch stored reminders |
+| `POST` | `/api/chat-image/log-adherence` | Log structured visual meal adherence from food photos |
 
 ## Environment Variables
 
@@ -237,7 +237,6 @@ http://localhost:8501
 | `LLM_TIMEOUT_SECONDS` | `120` | LLM request timeout |
 | `LLM_MAX_RETRIES` | `3` | Retry count for transient LLM failures |
 | `BACKEND_URL` | `http://localhost:8000` | Backend URL used by Streamlit |
-| `STORAGE_PATH` | `./data/app_state.json` | Local JSON persistence file |
 
 Task-specific provider overrides are also supported through variables such as `MEAL_PLAN_LLM_PROVIDER`, `CHAT_LLM_PROVIDER`, and corresponding fallback variables such as `MEAL_PLAN_FALLBACK_LLM_PROVIDER`.
 
@@ -254,15 +253,13 @@ Task-specific provider overrides are also supported through variables such as `M
 
 ## Data and Persistence
 
-The project currently stores runtime data in `data/app_state.json` through a small thread-safe JSON storage adapter. This keeps the prototype simple while preserving database-like contracts for:
+The project currently stores runtime data in a SQLite database (`data/database.sqlite`) using SQLAlchemy. This preserves robust database contracts for:
 
 - profiles
 - chat messages
 - meal feedback
 - adherence logs
 - reminders and notifications
-
-`docs/database_migration.sql` can be used as a reference when moving the project to a relational database.
 
 ## Tech Stack
 
@@ -273,14 +270,82 @@ The project currently stores runtime data in `data/app_state.json` through a sma
 | LLM Providers | Groq, Gemini, HuggingFace Router, Ollama, BioMistral |
 | RAG | LangChain, SentenceTransformers, FAISS |
 | Data Processing | pandas, NumPy, pypdf |
-| Storage | Local JSON file |
+| Storage | SQLite via SQLAlchemy |
 | Logging | Loguru |
+
+
+## Plivo-Aligned Interview Demo
+
+This project has been extended from a nutrition planner into a clinic communication workflow demo: an AI Dietitian Communication Assistant for Indian clinics. It demonstrates how programmable messaging, voice workflows, patient replies, reminders, risk escalation, and observability can support real patient follow-up.
+
+### Demo Story
+
+1. Create an automated meal, hydration, supplement, adherence, or follow-up reminder.
+2. Dispatch active reminders through the mock SMS/WhatsApp/voice communication layer.
+3. Simulate a patient reply such as `1`, `2`, `3`, `doctor call`, or `severe dizziness`.
+4. Let the system classify intent, risk, and recommended action.
+5. Use the voice assistant demo to simulate a transcribed phone call.
+6. Review the Doctor Dashboard for adherence, high-risk alerts, and suggested next action.
+7. Review Observability for reply rate, delivery success, channel usage, risk distribution, and demo readiness.
+
+### Communication Features
+
+- Mock SMS, WhatsApp, voice, and in-app message provider
+- Outbound reminders and inbound reply handling
+- Intent detection for completed, skipped, alternative requested, callback requested, reminder requested, and medical risk
+- Automatic adherence logging from simple patient replies
+- Voice assistant endpoint for transcript-based nutrition follow-up demos
+- Doctor/dietitian dashboard with risk alerts and suggested actions
+- Observability dashboard with communication KPIs, channel breakdowns, intent distribution, and operational alerts
+
+
+### Communication Provider Adapter
+
+The communication workflow uses a provider adapter boundary:
+
+- `MockCommunicationProvider` keeps the demo local and deterministic.
+- `PlivoReadyProvider` preserves the delivery contract for a future real Plivo integration.
+- The rest of the application calls `send_message(...)` and does not need to know which provider is active.
+
+Relevant environment variables:
+
+```env
+COMMUNICATION_PROVIDER=mock
+PLIVO_AUTH_ID=
+PLIVO_AUTH_TOKEN=
+PLIVO_SOURCE_NUMBER=
+```
+
+Provider status is exposed through:
+
+```text
+GET /api/communications/provider/status
+```
+
+This keeps the project interview-safe because no paid communication API or real patient phone number is required for the demo, while still showing the engineering boundary needed for production provider integration.
+
+### Interview-Relevant API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/api/communications/send-reminder` | Send and log a mock SMS/WhatsApp/voice/in-app message |
+| `POST` | `/api/communications/inbound-reply` | Simulate inbound patient reply and classify intent/risk |
+| `GET` | `/api/communications/history/{user_id}` | Fetch patient communication timeline |
+| `GET` | `/api/communications/metrics` | Fetch communication metrics |
+| `GET` | `/api/communications/provider/status` | Check active communication provider adapter |
+| `POST` | `/reminders/dispatch-active` | Dispatch active reminders through the communication layer |
+| `POST` | `/api/voice/assistant` | Run transcript-based voice assistant intent/risk workflow |
+| `GET` | `/api/clinic/patient/{user_id}` | Doctor/dietitian patient dashboard summary |
+| `GET` | `/api/observability/snapshot` | Operational observability snapshot |
+
+### Why This Aligns With Communication Platform Work
+
+The communication layer is intentionally provider-agnostic. The current `mock` provider stores messages locally for demo safety, but the architecture can be adapted to a real programmable communications provider by replacing the send/receive adapter while keeping the API contract, dashboard, observability, and patient workflows intact.
 
 ## Production Notes
 
 - Replace permissive CORS settings with explicit frontend origins before production deployment.
 - Move API keys out of source code and into environment variables or a secret manager.
-- Replace local JSON persistence with a database for multi-user or hosted deployments.
 - Add authentication and authorization before storing real user health data.
 - Review all medical and nutrition guidance with qualified professionals before public use.
 - Add automated tests for API contracts, nutrition calculations, and agent output validation.
@@ -291,4 +356,5 @@ This project currently does not include a license file. Add one before distribut
 
 ## Author
 
-Built by **Nitin** as an AI-assisted Indian nutrition planning project.
+Built by **Nitin & Akshita** as an AI-assisted Indian nutrition planning project.
+

@@ -85,6 +85,7 @@ class Meal(BaseModel):
     recipe_steps: List[str] = Field(default_factory=list)
     youtube_url: Optional[str] = None
     recommendation_score: Optional[float] = None
+    affordability_score: Optional[float] = None
 
 
 class DayPlan(BaseModel):
@@ -140,12 +141,24 @@ class GroceryListResponse(BaseModel):
 
 
 
+class VisualMealAnalysis(BaseModel):
+    dish_name: str
+    estimated_calories: float
+    protein_g: float
+    carbs_g: float
+    fat_g: float
+    confidence_score: float
+    nutrition_assessment: str
+
+
 class ChatResponse(BaseModel):
     user_id: str
     message_id: str
     answer: str
     warnings: List[str] = Field(default_factory=list)
     suggested_actions: List[str] = Field(default_factory=list)
+    detected_language: str = "en"
+    english_message: Optional[str] = None
     disclaimer: str = (
         "This AI nutrition assistant is informational and is not a substitute for medical care."
     )

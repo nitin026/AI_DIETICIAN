@@ -34,7 +34,8 @@ class ClinicalAnalystAgent:
         rag_queries = self._build_rag_queries(profile)
         icmr_context: list[str] = []
         for query in rag_queries:
-            icmr_context.extend(retrieve(query, k=2))
+            for item in retrieve(query, k=2):
+                icmr_context.append(item["text"])
         icmr_context = list(dict.fromkeys(icmr_context))  # deduplicate while preserving order
 
         # ── Step 3: LLM refinement ────────────────────────────────────

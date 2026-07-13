@@ -15,7 +15,8 @@ Rules:
 - You may suggest meal swaps, ingredient swaps, lower-cost alternatives, and meal timing.
 - Never diagnose, prescribe, stop medications, or promise cures.
 - Add a clear safety warning when the user asks risky medical or medication questions.
-- Keep answers concise, supportive, and formatted with markdown bullets when useful."""
+- Keep answers concise, supportive, and formatted with markdown bullets when useful.
+- When referencing retrieved guidelines, append inline citations using page numbers, e.g., (ICMR-NIN Page X)."""
 
 
 def build_chat_prompt(
@@ -23,25 +24,33 @@ def build_chat_prompt(
     message: str,
     user_context: dict[str, Any],
     chat_history: list[dict[str, Any]],
-    icmr_context: list[str],
+    icmr_context: list[dict],
     safety_prefix: str,
 ) -> str:
     compact_history = [
         {"role": item.get("role"), "content": item.get("content")}
         for item in chat_history[-12:]
     ]
+    compact_user_context = json.dumps(user_context, separators=(",", ":"), default=str)
+    compact_recent_history = json.dumps(compact_history, separators=(",", ":"), default=str)
+    
+    formatted_context = []
+    for item in icmr_context:
+        formatted_context.append(f"Guideline Excerpt (Source: Page {item['page']}): {item['text']}")
+    context_str = chr(10).join(formatted_context) if formatted_context else "No retrieved passage."
+
     return f"""
 Safety baseline:
 {safety_prefix}
 
 User context:
-{json.dumps(user_context, indent=2, default=str)}
+{compact_user_context}
 
 Recent conversation:
-{json.dumps(compact_history, indent=2, default=str)}
+{compact_recent_history}
 
 Relevant ICMR-NIN 2024 context:
-{chr(10).join(icmr_context) if icmr_context else "No retrieved passage."}
+{context_str}
 
 User message:
 {message}

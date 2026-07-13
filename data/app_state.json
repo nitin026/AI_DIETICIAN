@@ -9,80 +9,115 @@
         "occupation": "Software Engineer",
         "activity_level": "moderately_active",
         "diseases": [
-          "Mild hypertension",
-          "high cholesterol (borderline LDL)",
-          "vitamin B12 deficiency"
+          "Anemia",
+          "Frequent fatigue",
+          "dizziness during exertion"
         ],
         "medications": [
-          "Telmisartan 40mg (once daily)",
-          "Vitamin B12 supplement (weekly)"
+          "Ferrous sulfate 325 mg once daily",
+          "Vitamin C 500 mg once daily"
         ],
         "addictions": {
           "smoking": "never",
           "alcohol": "never",
           "tobacco": "never"
-        }
+        },
+        "bmr_equation": "icmr_nin_who_fao_unu"
       },
       "preference_profile": {
         "likes": [
-          "rice",
-          "fish curry",
-          "chicken curry",
-          "ilish",
-          "rohu",
-          "mutton (occasionally)",
-          "egg curry",
+          "chapati",
+          "brown rice",
           "dal",
-          "aloo posto",
-          "shorshe bata dishes",
-          "doi"
+          "rajma",
+          "chole",
+          "spinach",
+          "paneer",
+          "tofu",
+          "beetroot",
+          "pomegranate",
+          "orange",
+          "apple",
+          "banana",
+          "sprouts",
+          "poha",
+          "oats",
+          "curd"
         ],
         "dislikes": [
-          "broccoli",
-          "bitter gourd"
+          "bitter gourd",
+          "eggplant"
         ],
-        "dietary_preference": "non_vegetarian",
+        "dietary_preference": "vegetarian",
         "allergies": [
-          "None"
+          "none"
         ],
         "pantry_ingredients": [
+          "whole wheat flour",
           "rice",
-          "mustard oil",
-          "onion",
-          "tomato",
-          "potato",
-          "ginger",
-          "garlic",
-          "green chilli",
-          "turmeric",
-          "cumin",
-          "mustard seeds",
-          "posto",
+          "brown rice",
+          "oats",
+          "poha",
           "masoor dal",
           "moong dal",
-          "egg",
-          "chicken",
-          "rohu fish",
+          "chana dal",
+          "rajma",
+          "chickpeas",
+          "soy chunks",
+          "paneer",
+          "tofu",
+          "milk",
           "curd",
-          "milk"
+          "spinach",
+          "fenugreek leaves",
+          "beetroot",
+          "carrot",
+          "tomato",
+          "onion",
+          "potato",
+          "capsicum",
+          "peas",
+          "broccoli",
+          "ginger",
+          "garlic",
+          "lemon",
+          "orange",
+          "amla",
+          "pomegranate",
+          "banana",
+          "apple",
+          "dates",
+          "raisins",
+          "almonds",
+          "peanuts",
+          "sesame seeds",
+          "pumpkin seeds",
+          "olive oil",
+          "mustard oil",
+          "turmeric",
+          "cumin",
+          "coriander powder",
+          "black pepper",
+          "garam masala",
+          "salt"
         ],
-        "budget": "high",
-        "cooking_skill": "advanced",
-        "regional_cuisine": "Bengali"
+        "budget": "low",
+        "cooking_skill": "beginner",
+        "regional_cuisine": "North Indian"
       },
       "daily_targets": {
-        "calories": 2500.0,
-        "protein_g": 107.0,
-        "carbs_g": 340.0,
-        "fat_g": 78.0,
-        "fiber_g": 25.0,
+        "calories": 2598.0,
+        "protein_g": 110.4,
+        "carbs_g": 370.2,
+        "fat_g": 75.1,
+        "fiber_g": 28.0,
         "water_ml": 2450.0,
-        "sodium_mg": 1500.0,
+        "sodium_mg": 2000.0,
         "potassium_mg": 3500.0,
-        "iron_mg": 19.0,
+        "iron_mg": 27.0,
         "calcium_mg": 1000.0,
         "vitamin_d_iu": 600.0,
-        "b12_mcg": 2.2,
+        "b12_mcg": 2.4,
         "vitamin_a_mcg": 840.0,
         "vitamin_b1_mg": 1.4,
         "vitamin_b2_mg": 1.6,
@@ -90,9 +125,9 @@
         "vitamin_b5_mg": 5.0,
         "vitamin_b6_mg": 2.0,
         "vitamin_b7_mcg": 30.0,
-        "vitamin_b9_mcg": 220.0,
-        "vitamin_b12_mcg": 2.2,
-        "vitamin_c_mg": 80.0,
+        "vitamin_b9_mcg": 400.0,
+        "vitamin_b12_mcg": 2.4,
+        "vitamin_c_mg": 100.0,
         "vitamin_e_mg": 10.0,
         "vitamin_k_mcg": 55.0,
         "magnesium_mg": 340.0,
@@ -116,546 +151,1332 @@
           {
             "day": "Monday",
             "breakfast": {
-              "name": "Luchi",
+              "name": "Poha with Banana",
               "ingredients": [
-                "refined flour",
-                "ghee",
-                "salt"
-              ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
-            },
-            "mid_morning_snack": {
-              "name": "Mishti Doi",
-              "ingredients": [
-                "curd",
+                "poha",
+                "banana",
+                "milk",
                 "sugar"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 34.6,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=UXaOuBoatUA",
+              "recommendation_score": 75.0,
+              "affordability_score": 1.756
+            },
+            "mid_morning_snack": {
+              "name": "Roasted Chana",
+              "ingredients": [
+                "chana dal",
+                "salt",
+                "black pepper"
+              ],
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 21.7,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=JH-Mveb2zWw",
+              "recommendation_score": 64.0,
+              "affordability_score": 4.959
             },
             "lunch": {
-              "name": "Bengali Fish Curry",
+              "name": "Dal Fry with Brown Rice",
               "ingredients": [
-                "rohu fish",
-                "mustard oil",
+                "masoor dal",
+                "brown rice",
                 "onion",
                 "tomato",
-                "ginger"
+                "ginger",
+                "garlic"
               ],
-              "calories": 750.0,
-              "protein_g": 32.1,
-              "carbs_g": 102.0,
-              "fat_g": 23.4
+              "quantity_g": null,
+              "calories": 779.4,
+              "protein_g": 33.1,
+              "carbs_g": 111.1,
+              "fat_g": 22.5,
+              "fiber_g": 8.4,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 41.72,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=8c_scYUN5uc",
+              "recommendation_score": 72.0,
+              "affordability_score": 4.546
             },
             "evening_snack": {
-              "name": "Aloo Posto",
+              "name": "Curd with Cucumber",
               "ingredients": [
-                "potato",
-                "posto",
-                "mustard oil",
-                "onion",
-                "green chilli"
+                "curd",
+                "cucumber",
+                "cumin powder"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 28.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=9jN9i96ARCM",
+              "recommendation_score": 64.0,
+              "affordability_score": 0.593
             },
             "dinner": {
-              "name": "Chicken Rezala",
+              "name": "Vegetable Chana Masala with Chapati",
               "ingredients": [
-                "chicken",
-                "mustard oil",
+                "chana dal",
                 "onion",
                 "tomato",
-                "ginger"
+                "capsicum",
+                "carrot",
+                "chapati"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 38.76,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=M-ohmJswy6A",
+              "recommendation_score": 75.0,
+              "affordability_score": 5.755
+            },
+            "daily_totals": {
+              "calories": 2598.0,
+              "protein_g": 110.4,
+              "carbs_g": 370.2,
+              "fat_g": 75.1,
+              "fiber_g": 28.0,
+              "water_ml": 2450.0,
+              "sodium_mg": null,
+              "potassium_mg": null,
+              "iron_mg": null,
+              "calcium_mg": null,
+              "vitamin_d_iu": null,
+              "b12_mcg": null,
+              "vitamin_a_mcg": null,
+              "vitamin_b1_mg": null,
+              "vitamin_b2_mg": null,
+              "vitamin_b3_mg": null,
+              "vitamin_b5_mg": null,
+              "vitamin_b6_mg": null,
+              "vitamin_b7_mcg": null,
+              "vitamin_b9_mcg": null,
+              "vitamin_b12_mcg": null,
+              "vitamin_c_mg": null,
+              "vitamin_e_mg": null,
+              "vitamin_k_mcg": null,
+              "magnesium_mg": null,
+              "zinc_mg": null,
+              "selenium_mcg": null,
+              "copper_mg": null,
+              "phosphorus_mg": null,
+              "iodine_mcg": null,
+              "chloride_mg": null,
+              "manganese_mg": null,
+              "chromium_mcg": null,
+              "molybdenum_mcg": null,
+              "choline_mg": null,
+              "omega_3_g": null,
+              "omega_6_g": null,
+              "glycemic_load": null,
+              "glycemic_index": null
             }
           },
           {
             "day": "Tuesday",
             "breakfast": {
-              "name": "Radhaballavi",
+              "name": "Oats with Fruit Salad",
               "ingredients": [
-                "refined flour",
-                "lentil",
-                "ghee",
-                "salt"
+                "atta",
+                "milk",
+                "banana",
+                "seasonal fruit",
+                "orange"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 41.76,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=yERLuJCVTOA",
+              "recommendation_score": 75.0,
+              "affordability_score": 2.856
             },
             "mid_morning_snack": {
-              "name": "Shorshe Bata",
+              "name": "Spiced Peanuts",
               "ingredients": [
-                "mustard seeds",
-                "green chilli",
-                "garlic",
+                "peanuts",
                 "salt",
-                "mustard oil"
+                "black pepper",
+                "cumin powder"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 28.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=ZoHQ_kgP33E",
+              "recommendation_score": 64.0,
+              "affordability_score": 4.667
             },
             "lunch": {
-              "name": "Mutton Kosha",
+              "name": "Rajma Masala with Brown Rice",
               "ingredients": [
-                "mutton",
-                "mustard oil",
+                "soy chunks",
                 "onion",
                 "tomato",
-                "ginger"
+                "ginger",
+                "garlic",
+                "brown rice"
               ],
-              "calories": 750.0,
-              "protein_g": 32.1,
-              "carbs_g": 102.0,
-              "fat_g": 23.4
+              "quantity_g": null,
+              "calories": 779.4,
+              "protein_g": 33.1,
+              "carbs_g": 111.1,
+              "fat_g": 22.5,
+              "fiber_g": 8.4,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 41.12,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=M_ncAJhIaIU",
+              "recommendation_score": 72.0,
+              "affordability_score": 7.335
             },
             "evening_snack": {
-              "name": "Moong Dal",
+              "name": "Boiled Sprouts",
               "ingredients": [
-                "moong dal",
-                "mustard oil",
-                "onion",
-                "green chilli",
+                "moong dal sprouts",
                 "salt"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 15.5,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=nCFxRM-N9DA",
+              "recommendation_score": 64.0,
+              "affordability_score": 8.546
             },
             "dinner": {
-              "name": "Ilish Machh Bhaja",
+              "name": "Palak Paneer with Chapati",
               "ingredients": [
-                "ilish fish",
-                "mustard oil",
+                "soy chunks",
+                "spinach",
                 "onion",
-                "green chilli",
-                "salt"
+                "tomato",
+                "chapati"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 31.06,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=ozvSlHI8WoM",
+              "recommendation_score": 75.0,
+              "affordability_score": 11.394
+            },
+            "daily_totals": {
+              "calories": 2598.0,
+              "protein_g": 110.4,
+              "carbs_g": 370.2,
+              "fat_g": 75.1,
+              "fiber_g": 28.0,
+              "water_ml": 2450.0,
+              "sodium_mg": null,
+              "potassium_mg": null,
+              "iron_mg": null,
+              "calcium_mg": null,
+              "vitamin_d_iu": null,
+              "b12_mcg": null,
+              "vitamin_a_mcg": null,
+              "vitamin_b1_mg": null,
+              "vitamin_b2_mg": null,
+              "vitamin_b3_mg": null,
+              "vitamin_b5_mg": null,
+              "vitamin_b6_mg": null,
+              "vitamin_b7_mcg": null,
+              "vitamin_b9_mcg": null,
+              "vitamin_b12_mcg": null,
+              "vitamin_c_mg": null,
+              "vitamin_e_mg": null,
+              "vitamin_k_mcg": null,
+              "magnesium_mg": null,
+              "zinc_mg": null,
+              "selenium_mcg": null,
+              "copper_mg": null,
+              "phosphorus_mg": null,
+              "iodine_mcg": null,
+              "chloride_mg": null,
+              "manganese_mg": null,
+              "chromium_mcg": null,
+              "molybdenum_mcg": null,
+              "choline_mg": null,
+              "omega_3_g": null,
+              "omega_6_g": null,
+              "glycemic_load": null,
+              "glycemic_index": null
             }
           },
           {
             "day": "Wednesday",
             "breakfast": {
-              "name": "Paratha",
+              "name": "Idli with Coconut Chutney",
               "ingredients": [
-                "refined flour",
-                "ghee",
-                "salt"
+                "rice",
+                "urad dal",
+                "coconut",
+                "chutney"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 28.12,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=MnlYBbQp5lI",
+              "recommendation_score": 75.0,
+              "affordability_score": 1.296
             },
             "mid_morning_snack": {
-              "name": "Doi",
+              "name": "Fresh Fruit Salad",
               "ingredients": [
-                "curd"
+                "banana",
+                "seasonal fruit",
+                "orange",
+                "pomegranate"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 33.2,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=tBN_qdB1h7Q",
+              "recommendation_score": 64.0,
+              "affordability_score": 1.006
             },
             "lunch": {
-              "name": "Egg Curry",
+              "name": "Mixed Vegetable Sambar with Brown Rice",
               "ingredients": [
-                "egg",
-                "mustard oil",
+                "soy chunks",
+                "mixed vegetables",
                 "onion",
                 "tomato",
-                "ginger"
+                "brown rice"
               ],
-              "calories": 750.0,
-              "protein_g": 32.1,
-              "carbs_g": 102.0,
-              "fat_g": 23.4
+              "quantity_g": null,
+              "calories": 779.4,
+              "protein_g": 33.1,
+              "carbs_g": 111.1,
+              "fat_g": 22.5,
+              "fiber_g": 8.4,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 32.62,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=6poaIzfzw4U",
+              "recommendation_score": 72.0,
+              "affordability_score": 9.624
             },
             "evening_snack": {
-              "name": "Masoor Dal",
+              "name": "Roasted Makhana",
               "ingredients": [
-                "masoor dal",
-                "mustard oil",
-                "onion",
-                "green chilli",
-                "salt"
+                "makhana",
+                "salt",
+                "black pepper"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 24.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=G8d92D4Tlqg",
+              "recommendation_score": 64.0,
+              "affordability_score": 0.125
             },
             "dinner": {
-              "name": "Rui Macher Jhol",
+              "name": "Baingan Bharta with Chapati",
               "ingredients": [
-                "rohu fish",
-                "mustard oil",
+                "brinjal",
                 "onion",
                 "tomato",
-                "ginger"
+                "ginger",
+                "garlic",
+                "chapati"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 41.56,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=COeeURRduP0",
+              "recommendation_score": 75.0,
+              "affordability_score": 2.529
+            },
+            "daily_totals": {
+              "calories": 2598.0,
+              "protein_g": 110.4,
+              "carbs_g": 370.2,
+              "fat_g": 75.1,
+              "fiber_g": 28.0,
+              "water_ml": 2450.0,
+              "sodium_mg": null,
+              "potassium_mg": null,
+              "iron_mg": null,
+              "calcium_mg": null,
+              "vitamin_d_iu": null,
+              "b12_mcg": null,
+              "vitamin_a_mcg": null,
+              "vitamin_b1_mg": null,
+              "vitamin_b2_mg": null,
+              "vitamin_b3_mg": null,
+              "vitamin_b5_mg": null,
+              "vitamin_b6_mg": null,
+              "vitamin_b7_mcg": null,
+              "vitamin_b9_mcg": null,
+              "vitamin_b12_mcg": null,
+              "vitamin_c_mg": null,
+              "vitamin_e_mg": null,
+              "vitamin_k_mcg": null,
+              "magnesium_mg": null,
+              "zinc_mg": null,
+              "selenium_mcg": null,
+              "copper_mg": null,
+              "phosphorus_mg": null,
+              "iodine_mcg": null,
+              "chloride_mg": null,
+              "manganese_mg": null,
+              "chromium_mcg": null,
+              "molybdenum_mcg": null,
+              "choline_mg": null,
+              "omega_3_g": null,
+              "omega_6_g": null,
+              "glycemic_load": null,
+              "glycemic_index": null
             }
           },
           {
             "day": "Thursday",
             "breakfast": {
-              "name": "Puri",
+              "name": "Upma with Vegetables",
               "ingredients": [
-                "refined flour",
-                "ghee",
-                "salt"
-              ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
-            },
-            "mid_morning_snack": {
-              "name": "Aam Doi",
-              "ingredients": [
-                "curd",
-                "mango"
-              ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
-            },
-            "lunch": {
-              "name": "Chicken Dak Bungalow",
-              "ingredients": [
-                "chicken",
-                "mustard oil",
+                "semolina",
                 "onion",
                 "tomato",
-                "ginger"
+                "carrot",
+                "peas"
               ],
-              "calories": 750.0,
-              "protein_g": 32.1,
-              "carbs_g": 102.0,
-              "fat_g": 23.4
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 38.5,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=Fz20kYmUcuY",
+              "recommendation_score": 75.0,
+              "affordability_score": 1.17
+            },
+            "mid_morning_snack": {
+              "name": "Curd with Honey",
+              "ingredients": [
+                "curd",
+                "honey"
+              ],
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 20.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=cQdddoWLxDE",
+              "recommendation_score": 64.0,
+              "affordability_score": 0.78
+            },
+            "lunch": {
+              "name": "Chickpea Curry with Brown Rice",
+              "ingredients": [
+                "chickpea",
+                "onion",
+                "tomato",
+                "ginger",
+                "garlic",
+                "brown rice"
+              ],
+              "quantity_g": null,
+              "calories": 779.4,
+              "protein_g": 33.1,
+              "carbs_g": 111.1,
+              "fat_g": 22.5,
+              "fiber_g": 8.4,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 41.72,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=835wrI5L26E",
+              "recommendation_score": 72.0,
+              "affordability_score": 4.262
             },
             "evening_snack": {
-              "name": "Posto Bata",
+              "name": "Boiled Corn",
               "ingredients": [
-                "posto",
-                "mustard oil",
-                "green chilli",
-                "garlic",
+                "corn",
                 "salt"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 16.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=oO56X3bWx6A",
+              "recommendation_score": 64.0,
+              "affordability_score": 0.125
             },
             "dinner": {
-              "name": "Pomfret Fry",
+              "name": "Gobhi Aloo with Chapati",
               "ingredients": [
-                "pomfret fish",
-                "mustard oil",
+                "cauliflower",
+                "potato",
                 "onion",
-                "green chilli",
-                "salt"
+                "tomato",
+                "chapati"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 33.06,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=JihdOvkxQC8",
+              "recommendation_score": 75.0,
+              "affordability_score": 3.553
+            },
+            "daily_totals": {
+              "calories": 2598.0,
+              "protein_g": 110.4,
+              "carbs_g": 370.2,
+              "fat_g": 75.1,
+              "fiber_g": 28.0,
+              "water_ml": 2450.0,
+              "sodium_mg": null,
+              "potassium_mg": null,
+              "iron_mg": null,
+              "calcium_mg": null,
+              "vitamin_d_iu": null,
+              "b12_mcg": null,
+              "vitamin_a_mcg": null,
+              "vitamin_b1_mg": null,
+              "vitamin_b2_mg": null,
+              "vitamin_b3_mg": null,
+              "vitamin_b5_mg": null,
+              "vitamin_b6_mg": null,
+              "vitamin_b7_mcg": null,
+              "vitamin_b9_mcg": null,
+              "vitamin_b12_mcg": null,
+              "vitamin_c_mg": null,
+              "vitamin_e_mg": null,
+              "vitamin_k_mcg": null,
+              "magnesium_mg": null,
+              "zinc_mg": null,
+              "selenium_mcg": null,
+              "copper_mg": null,
+              "phosphorus_mg": null,
+              "iodine_mcg": null,
+              "chloride_mg": null,
+              "manganese_mg": null,
+              "chromium_mcg": null,
+              "molybdenum_mcg": null,
+              "choline_mg": null,
+              "omega_3_g": null,
+              "omega_6_g": null,
+              "glycemic_load": null,
+              "glycemic_index": null
             }
           },
           {
             "day": "Friday",
             "breakfast": {
-              "name": "Kachori",
+              "name": "Dalia with Milk",
               "ingredients": [
-                "refined flour",
-                "lentil",
-                "ghee",
-                "salt"
-              ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
-            },
-            "mid_morning_snack": {
-              "name": "Jalbhara Sandesh",
-              "ingredients": [
-                "curd",
+                "dalia",
+                "milk",
                 "sugar"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 30.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=vs0PHkDAswM",
+              "recommendation_score": 75.0,
+              "affordability_score": 0.516
+            },
+            "mid_morning_snack": {
+              "name": "Fresh Coconut Water",
+              "ingredients": [
+                "coconut water"
+              ],
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 8.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=IWn-z9oClYw",
+              "recommendation_score": 64.0,
+              "affordability_score": 0.125
             },
             "lunch": {
-              "name": "Mutton Rezala",
+              "name": "Lentil Soup with Brown Rice",
               "ingredients": [
-                "mutton",
-                "mustard oil",
+                "lentil",
                 "onion",
                 "tomato",
-                "ginger"
+                "ginger",
+                "garlic",
+                "brown rice"
               ],
-              "calories": 750.0,
-              "protein_g": 32.1,
-              "carbs_g": 102.0,
-              "fat_g": 23.4
+              "quantity_g": null,
+              "calories": 779.4,
+              "protein_g": 33.1,
+              "carbs_g": 111.1,
+              "fat_g": 22.5,
+              "fiber_g": 8.4,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 43.12,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=mdT3tFEug00",
+              "recommendation_score": 72.0,
+              "affordability_score": 1.511
             },
             "evening_snack": {
-              "name": "Moong Dal Khichdi",
+              "name": "Roasted Soy Chunks",
               "ingredients": [
-                "moong dal",
-                "rice",
-                "mustard oil",
-                "onion",
-                "green chilli"
+                "soy chunks",
+                "salt",
+                "black pepper"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 22.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=eoqNsPShUR8",
+              "recommendation_score": 64.0,
+              "affordability_score": 10.884
             },
             "dinner": {
-              "name": "Bhapa Ilish",
+              "name": "Mattar Paneer with Chapati",
               "ingredients": [
-                "ilish fish",
-                "mustard oil",
+                "soy chunks",
+                "peas",
                 "onion",
-                "green chilli",
-                "salt"
+                "tomato",
+                "chapati"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 31.56,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=ZknwxYH8g2A",
+              "recommendation_score": 75.0,
+              "affordability_score": 10.791
+            },
+            "daily_totals": {
+              "calories": 2598.0,
+              "protein_g": 110.4,
+              "carbs_g": 370.2,
+              "fat_g": 75.1,
+              "fiber_g": 28.0,
+              "water_ml": 2450.0,
+              "sodium_mg": null,
+              "potassium_mg": null,
+              "iron_mg": null,
+              "calcium_mg": null,
+              "vitamin_d_iu": null,
+              "b12_mcg": null,
+              "vitamin_a_mcg": null,
+              "vitamin_b1_mg": null,
+              "vitamin_b2_mg": null,
+              "vitamin_b3_mg": null,
+              "vitamin_b5_mg": null,
+              "vitamin_b6_mg": null,
+              "vitamin_b7_mcg": null,
+              "vitamin_b9_mcg": null,
+              "vitamin_b12_mcg": null,
+              "vitamin_c_mg": null,
+              "vitamin_e_mg": null,
+              "vitamin_k_mcg": null,
+              "magnesium_mg": null,
+              "zinc_mg": null,
+              "selenium_mcg": null,
+              "copper_mg": null,
+              "phosphorus_mg": null,
+              "iodine_mcg": null,
+              "chloride_mg": null,
+              "manganese_mg": null,
+              "chromium_mcg": null,
+              "molybdenum_mcg": null,
+              "choline_mg": null,
+              "omega_3_g": null,
+              "omega_6_g": null,
+              "glycemic_load": null,
+              "glycemic_index": null
             }
           },
           {
             "day": "Saturday",
             "breakfast": {
-              "name": "Luchi",
+              "name": "Paratha with Curd",
               "ingredients": [
-                "refined flour",
-                "ghee",
-                "salt"
+                "paratha",
+                "curd"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 20.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=AMlZKmh_N1w",
+              "recommendation_score": 75.0,
+              "affordability_score": 0.78
             },
             "mid_morning_snack": {
-              "name": "Shrikhand",
+              "name": "Spiced Pumpkin Seeds",
               "ingredients": [
-                "curd",
-                "sugar"
+                "pumpkin seeds",
+                "salt",
+                "black pepper",
+                "cumin powder"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 32.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=pDbAf8UDhLs",
+              "recommendation_score": 64.0,
+              "affordability_score": 0.125
             },
             "lunch": {
-              "name": "Chicken Kosha",
+              "name": "Rajasthani Dal with Brown Rice",
               "ingredients": [
-                "chicken",
-                "mustard oil",
+                "moong dal",
                 "onion",
                 "tomato",
-                "ginger"
+                "ginger",
+                "garlic",
+                "brown rice"
               ],
-              "calories": 750.0,
-              "protein_g": 32.1,
-              "carbs_g": 102.0,
-              "fat_g": 23.4
+              "quantity_g": null,
+              "calories": 779.4,
+              "protein_g": 33.1,
+              "carbs_g": 111.1,
+              "fat_g": 22.5,
+              "fiber_g": 8.4,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 42.62,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=q1NqB03IV4w",
+              "recommendation_score": 72.0,
+              "affordability_score": 4.59
             },
             "evening_snack": {
-              "name": "Aloo Bhaja",
+              "name": "Boiled Carrot",
               "ingredients": [
-                "potato",
-                "mustard oil",
-                "onion",
-                "green chilli",
+                "carrot",
                 "salt"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 15.5,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=rnoi1aEcSHU",
+              "recommendation_score": 64.0,
+              "affordability_score": 0.99
             },
             "dinner": {
-              "name": "Rui Macher Bhaja",
+              "name": "Saag Aloo with Chapati",
               "ingredients": [
-                "rohu fish",
-                "mustard oil",
+                "spinach",
+                "potato",
                 "onion",
-                "green chilli",
-                "salt"
+                "tomato",
+                "chapati"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 33.06,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=He5yjZpIiZI",
+              "recommendation_score": 75.0,
+              "affordability_score": 3.553
+            },
+            "daily_totals": {
+              "calories": 2598.0,
+              "protein_g": 110.4,
+              "carbs_g": 370.2,
+              "fat_g": 75.1,
+              "fiber_g": 28.0,
+              "water_ml": 2450.0,
+              "sodium_mg": null,
+              "potassium_mg": null,
+              "iron_mg": null,
+              "calcium_mg": null,
+              "vitamin_d_iu": null,
+              "b12_mcg": null,
+              "vitamin_a_mcg": null,
+              "vitamin_b1_mg": null,
+              "vitamin_b2_mg": null,
+              "vitamin_b3_mg": null,
+              "vitamin_b5_mg": null,
+              "vitamin_b6_mg": null,
+              "vitamin_b7_mcg": null,
+              "vitamin_b9_mcg": null,
+              "vitamin_b12_mcg": null,
+              "vitamin_c_mg": null,
+              "vitamin_e_mg": null,
+              "vitamin_k_mcg": null,
+              "magnesium_mg": null,
+              "zinc_mg": null,
+              "selenium_mcg": null,
+              "copper_mg": null,
+              "phosphorus_mg": null,
+              "iodine_mcg": null,
+              "chloride_mg": null,
+              "manganese_mg": null,
+              "chromium_mcg": null,
+              "molybdenum_mcg": null,
+              "choline_mg": null,
+              "omega_3_g": null,
+              "omega_6_g": null,
+              "glycemic_load": null,
+              "glycemic_index": null
             }
           },
           {
             "day": "Sunday",
             "breakfast": {
-              "name": "Radhaballavi",
+              "name": "Besan Cheela with Chutney",
               "ingredients": [
-                "refined flour",
-                "lentil",
-                "ghee",
-                "salt"
+                "gram flour",
+                "onion",
+                "tomato",
+                "chutney"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 31.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=kFHJ0T-LKY0",
+              "recommendation_score": 75.0,
+              "affordability_score": 0.99
             },
             "mid_morning_snack": {
-              "name": "Mishti Doi",
+              "name": "Fresh Fruit Juice",
               "ingredients": [
-                "curd",
-                "sugar"
+                "orange",
+                "seasonal fruit",
+                "banana"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 25.2,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=Q34M1-tp3AU",
+              "recommendation_score": 64.0,
+              "affordability_score": 1.286
             },
             "lunch": {
-              "name": "Egg Curry",
+              "name": "Chana Masala with Brown Rice",
               "ingredients": [
-                "egg",
-                "mustard oil",
+                "chana dal",
                 "onion",
                 "tomato",
-                "ginger"
+                "ginger",
+                "garlic",
+                "brown rice"
               ],
-              "calories": 750.0,
-              "protein_g": 32.1,
-              "carbs_g": 102.0,
-              "fat_g": 23.4
+              "quantity_g": null,
+              "calories": 779.4,
+              "protein_g": 33.1,
+              "carbs_g": 111.1,
+              "fat_g": 22.5,
+              "fiber_g": 8.4,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 40.82,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=M-ohmJswy6A",
+              "recommendation_score": 72.0,
+              "affordability_score": 4.159
             },
             "evening_snack": {
-              "name": "Posto Bata",
+              "name": "Curd with Cumin Powder",
               "ingredients": [
-                "posto",
-                "mustard oil",
-                "green chilli",
-                "garlic",
-                "salt"
+                "curd",
+                "cumin powder"
               ],
-              "calories": 250.0,
-              "protein_g": 10.7,
-              "carbs_g": 34.0,
-              "fat_g": 7.8
+              "quantity_g": null,
+              "calories": 259.8,
+              "protein_g": 11.0,
+              "carbs_g": 37.0,
+              "fat_g": 7.5,
+              "fiber_g": 2.8,
+              "preparation_time_minutes": 10,
+              "difficulty": "easy",
+              "estimated_cost_inr": 20.0,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=N74eui-RAOQ",
+              "recommendation_score": 64.0,
+              "affordability_score": 0.78
             },
             "dinner": {
-              "name": "Pomfret Curry",
+              "name": "Vegetable Biryani with Raita",
               "ingredients": [
-                "pomfret fish",
-                "mustard oil",
-                "onion",
-                "tomato",
-                "ginger"
+                "mixed vegetables",
+                "basmati rice",
+                "curd",
+                "cumin powder"
               ],
-              "calories": 625.0,
-              "protein_g": 26.8,
-              "carbs_g": 85.0,
-              "fat_g": 19.5
+              "quantity_g": null,
+              "calories": 649.5,
+              "protein_g": 27.6,
+              "carbs_g": 92.5,
+              "fat_g": 18.8,
+              "fiber_g": 7.0,
+              "preparation_time_minutes": 25,
+              "difficulty": "easy",
+              "estimated_cost_inr": 31.62,
+              "recipe_steps": [
+                "Prepare the listed ingredients and cook to taste."
+              ],
+              "youtube_url": "https://www.youtube.com/watch?v=hf_7IyLAzis",
+              "recommendation_score": 75.0,
+              "affordability_score": 2.005
+            },
+            "daily_totals": {
+              "calories": 2598.0,
+              "protein_g": 110.4,
+              "carbs_g": 370.2,
+              "fat_g": 75.1,
+              "fiber_g": 28.0,
+              "water_ml": 2450.0,
+              "sodium_mg": null,
+              "potassium_mg": null,
+              "iron_mg": null,
+              "calcium_mg": null,
+              "vitamin_d_iu": null,
+              "b12_mcg": null,
+              "vitamin_a_mcg": null,
+              "vitamin_b1_mg": null,
+              "vitamin_b2_mg": null,
+              "vitamin_b3_mg": null,
+              "vitamin_b5_mg": null,
+              "vitamin_b6_mg": null,
+              "vitamin_b7_mcg": null,
+              "vitamin_b9_mcg": null,
+              "vitamin_b12_mcg": null,
+              "vitamin_c_mg": null,
+              "vitamin_e_mg": null,
+              "vitamin_k_mcg": null,
+              "magnesium_mg": null,
+              "zinc_mg": null,
+              "selenium_mcg": null,
+              "copper_mg": null,
+              "phosphorus_mg": null,
+              "iodine_mcg": null,
+              "chloride_mg": null,
+              "manganese_mg": null,
+              "chromium_mcg": null,
+              "molybdenum_mcg": null,
+              "choline_mg": null,
+              "omega_3_g": null,
+              "omega_6_g": null,
+              "glycemic_load": null,
+              "glycemic_index": null
             }
           }
-        ]
+        ],
+        "weekly_grocery_list": {
+          "sugar": "as needed",
+          "cucumber": "as needed",
+          "cumin powder": "as needed",
+          "chapati": "as needed",
+          "atta": "as needed",
+          "seasonal fruit": "as needed",
+          "moong dal sprouts": "as needed",
+          "urad dal": "as needed",
+          "coconut": "as needed",
+          "chutney": "as needed",
+          "mixed vegetables": "as needed",
+          "makhana": "as needed",
+          "brinjal": "as needed",
+          "semolina": "as needed",
+          "honey": "as needed",
+          "chickpea": "as needed",
+          "corn": "as needed",
+          "cauliflower": "as needed",
+          "dalia": "as needed",
+          "coconut water": "as needed",
+          "lentil": "as needed",
+          "paratha": "as needed",
+          "gram flour": "as needed",
+          "basmati rice": "as needed"
+        },
+        "disclaimer": "This AI dietitian is an informational assistant and is not a substitute for professional medical advice, diagnosis, or treatment."
       },
       "grocery_list": {
         "items": [
           {
-            "ingredient": "Ghee",
+            "ingredient": "Atta",
             "quantity": "as needed",
-            "estimated_cost_inr": 100.0,
-            "category": "Fats & Oils"
+            "estimated_cost_inr": 2.7,
+            "category": "Grains"
           },
           {
-            "ingredient": "Ilish Fish",
+            "ingredient": "Basmati Rice",
             "quantity": "as needed",
-            "estimated_cost_inr": 50.0,
+            "estimated_cost_inr": 4.12,
+            "category": "Grains"
+          },
+          {
+            "ingredient": "Brinjal",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Cauliflower",
+            "quantity": "as needed",
+            "estimated_cost_inr": 7.5,
+            "category": "Vegetables"
+          },
+          {
+            "ingredient": "Chapati",
+            "quantity": "as needed",
+            "estimated_cost_inr": 2.7,
+            "category": "Grains"
+          },
+          {
+            "ingredient": "Chickpea",
+            "quantity": "as needed",
+            "estimated_cost_inr": 6.6,
             "category": "Protein"
+          },
+          {
+            "ingredient": "Chutney",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Coconut",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Coconut Water",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Corn",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Cucumber",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Cumin Powder",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Dalia",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Gram Flour",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Honey",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
+            "category": "General"
           },
           {
             "ingredient": "Lentil",
             "quantity": "as needed",
-            "estimated_cost_inr": 16.0,
+            "estimated_cost_inr": 8.0,
             "category": "General"
           },
           {
-            "ingredient": "Mango",
+            "ingredient": "Makhana",
             "quantity": "as needed",
-            "estimated_cost_inr": 16.0,
+            "estimated_cost_inr": 8.0,
             "category": "General"
           },
           {
-            "ingredient": "Mutton",
+            "ingredient": "Mixed Vegetables",
             "quantity": "as needed",
-            "estimated_cost_inr": 16.0,
-            "category": "General"
+            "estimated_cost_inr": 7.5,
+            "category": "Vegetables"
           },
           {
-            "ingredient": "Pomfret Fish",
+            "ingredient": "Moong Dal Sprouts",
             "quantity": "as needed",
-            "estimated_cost_inr": 50.0,
+            "estimated_cost_inr": 7.5,
             "category": "Protein"
           },
           {
-            "ingredient": "Refined Flour",
+            "ingredient": "Paratha",
             "quantity": "as needed",
-            "estimated_cost_inr": 16.0,
+            "estimated_cost_inr": 8.0,
             "category": "General"
           },
           {
-            "ingredient": "Salt",
+            "ingredient": "Seasonal Fruit",
             "quantity": "as needed",
-            "estimated_cost_inr": 16.0,
+            "estimated_cost_inr": 8.4,
+            "category": "Fruits"
+          },
+          {
+            "ingredient": "Semolina",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
             "category": "General"
           },
           {
             "ingredient": "Sugar",
             "quantity": "as needed",
-            "estimated_cost_inr": 16.0,
+            "estimated_cost_inr": 8.0,
+            "category": "General"
+          },
+          {
+            "ingredient": "Urad Dal",
+            "quantity": "as needed",
+            "estimated_cost_inr": 8.0,
             "category": "General"
           }
         ],
-        "total_estimated_cost_inr": 296.0,
+        "total_estimated_cost_inr": 175.02,
         "notes": [
-          "Prices are approximate (2024 retail rates).",
+          "Prices use the backend commodity price catalog and standard serving assumptions.",
           "Buy seasonal vegetables and fruits for cost savings.",
           "Prefer whole grains over refined grains per ICMR-NIN guidelines."
         ]
@@ -702,7 +1523,7 @@
           "notes": ""
         }
       ],
-      "updated_at": "2026-06-13T02:32:24.222033+00:00"
+      "updated_at": "2026-06-28T12:39:01.112027+00:00"
     }
   },
   "chat_messages": [
@@ -901,6 +1722,160 @@
       "user_id": "demo-user",
       "role": "assistant",
       "content": "To help reduce sodium in your diet, especially important for managing mild hypertension, we'll focus on reducing added salt in your cooking and making smart swaps for high-sodium items. Your daily sodium target is 1500mg, and many traditional Bengali preparations can be high in salt.\n\nHere are some modifications to your meal plan, starting with Monday, and general advice for the week:\n\n*   **Monday Breakfast Swap:**\n    *   **Original**: **Luchi** (refined flour, ghee, salt)\n        *   Calories: 625.0, Protein: 26.8g, Carbs: 85.0g, Fat: 19.5g\n    *   **New High-Protein, Low-Sodium Breakfast**: **3-Egg Bhurji with Spinach, 2 Whole Wheat Rotis, and a small bowl of Masoor Dal (low salt)**\n        *   **Ingredients**: 3 eggs, 1 cup chopped spinach, 1 small onion (chopped), 1 small tomato (chopped), 1 green chilli (chopped), 1 tsp mustard oil, pinch of turmeric, black pepper, *minimal salt* to taste. Serve with 2 whole wheat rotis and 1/2 cup cooked masoor dal (prepared with *very little salt*).\n        *   **Qualitative Changes**:\n            *   **Calories**: *Similar* (approx. 580-680 kcal) – Maintains energy target.\n            *   **Protein**: *Increased* (approx. 35-40g from eggs, dal, whole wheat vs 26.8g) – Excellent for protein target and B12.\n            *   **Carbs**: *Similar* (approx. 70-90g) – Focus on complex carbohydrates from whole wheat and dal.\n            *   **Fat**: *Similar/Slightly Reduced* (approx. 18-22g) – Healthier fats from eggs and minimal oil.\n            *   **Sodium**: *Significantly Reduced* – By consciously adding less salt during preparation and using whole wheat instead of refined flour. Spinach and dal also add beneficial potassium.\n            *   **Fiber**: *Increased* – From whole wheat, spinach, and dal, beneficial for cholesterol and digestion.\n\n*   **Monday Mid-morning Snack Swap:**\n    *   **Original**: **Mishti Doi** (curd, sugar)\n        *   Calories: 250.0, Protein: 10.7g, Carbs: 34.0g, Fat: 7.8g\n    *   **New Low-Sodium Snack**: **Plain Curd (Doi) with a handful of seasonal fruit (e.g., apple slices or guava)**\n        *   **Ingredients**: 1 cup plain curd, 1 small apple or guava (sliced).\n        *   **Qualitative Changes**:\n            *   **Calories**: *Reduced* (approx. 180-220 kcal) – Good for overall calorie management.\n            *   **Protein**: *Similar* (approx. 10-12g) – Maintains protein intake.\n            *   **Carbs**: *Similar* (approx. 30-35g) – Natural sugars from fruit, no added sugar.\n            *   **Fat**: *Similar* (approx. 7-8g) – Healthy fats from curd.\n            *   **Sodium**: *Significantly Reduced* – No added salt or sugar.\n            *   **Fiber**: *Increased* – From fruit, beneficial for digestion and cholesterol.\n\n*   **Monday Evening Snack Swap:**\n    *   **Original**: **Aloo Posto** (potato, posto, mustard oil, onion, green chilli)\n        *   Calories: 250.0, Protein: 10.7g, Carbs: 34.0g, Fat: 7.8g\n    *   **New Low-Sodium Snack**: **Handful of Roasted Chana (Bengal Gram) or a small bowl of Cucumber and Carrot Salad**\n        *   **Ingredients**: 1/2 cup roasted chana (unsalted) OR 1/2 cup sliced cucumber and carrot with a squeeze of lemon.\n        *   **Qualitative Changes**:\n            *   **Calories**: *Reduced* (approx. 100-150 kcal) – Lighter snack.\n            *   **Protein**: *Similar/Slightly Reduced* (approx. 8-10g from chana, very low from salad) – Chana provides good plant protein.\n            *   **Carbs**: *Reduced* (approx. 15-25g) – Lower carbohydrate intake.\n            *   **Fat**: *Significantly Reduced* (very low fat) – Excellent for cholesterol management.\n            *   **Sodium**: *Significantly Reduced* – Unsalted chana or fresh vegetables are naturally low in sodium.\n            *   **Fiber**: *Increased* – From chana and vegetables, beneficial for digestion and satiety.\n\n**General Sodium Reduction Tips for Your Diet:**\n\n*   **Reduce Added Salt in Cooking:** Consciously reduce the amount of salt you add to all your curries, dals, and vegetable preparations throughout the week. Start with half the usual amount and taste before adding more.\n*   **Flavor with Herbs & Spices:** Rely more on fresh ginger, garlic, green chillies, coriander, cumin, turmeric, and a squeeze of lemon juice to enhance flavor instead of salt.\n*   **Avoid Table Salt:** Do not keep a salt shaker on the dining table.\n*   **Limit High-Sodium Condiments:** Reduce consumption of pickles, papads, and processed chutneys, as these are typically very high in sodium.\n*   **Choose Fresh Over Processed:** Opt for fresh fruits, vegetables, and homemade snacks instead of packaged items like chips, namkeen, and biscuits, which are often high in sodium.\n*   **Cooking Methods for Fish:** When preparing fish (Ilish Machh Bhaja, Rui Macher Bhaja, Pomfret Fry), consider baking, grilling, or steaming more often instead of deep-frying, and use minimal salt in marinades.\n*   **Check Labels:** When purchasing any packaged food, always check the nutrition label for sodium content."
+    },
+    {
+      "id": "d6c9f88f-2f5b-488b-98c7-5244e13bd004",
+      "created_at": "2026-06-13T06:16:02.462759+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Make tomorrow breakfast high protein"
+    },
+    {
+      "id": "c6ad24f0-6195-4149-99ec-4ae3d5c77fa7",
+      "created_at": "2026-06-13T06:16:06.082790+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To make tomorrow's breakfast high in protein, I'll modify your existing meal plan. \n\n*   **Tomorrow's Breakfast Swap:**\n    *   **Original**: Poha with Nuts\n        *   Calories: 646.6, Protein: 27.5g, Carbs: 92.2g, Fat: 18.7g\n    *   **New High-Protein Breakfast**: Moong Dal Cheela with Vegetables and a side of Low-Fat Curd\n        *   **Ingredients**: 1 cup moong dal batter, 1/2 cup mixed vegetables (onion, tomato, bell peppers), 1/4 cup low-fat curd\n        *   **Qualitative Changes**:\n            *   **Calories**: *Similar* (approx. 620-680 kcal) – Maintains energy target.\n            *   **Protein**: *Increased* (approx. 32-35g from moong dal and curd) – Supports muscle health and satiety.\n            *   **Carbs and Fat**: *Adjusted* to balance the meal and meet your dietary preferences.\n\nThis modification incorporates moong dal, a high-protein ingredient, and pairs it with low-fat curd to enhance the protein content of your breakfast while keeping your calorie and macronutrient targets in mind."
+    },
+    {
+      "id": "ea1a912b-5509-42d8-a329-a9714d627c35",
+      "created_at": "2026-06-13T06:16:12.012706+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Reduce sodium in my diet"
+    },
+    {
+      "id": "e2c79e8e-a30b-4455-999b-e897d65a81d8",
+      "created_at": "2026-06-13T06:16:20.975051+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "I could not reach the AI model, so here is a safe baseline: keep meals balanced with dal/curd/eggs or lean protein, vegetables, whole grains or millets, and avoid changing medication or disease-specific restrictions without clinician guidance."
+    },
+    {
+      "id": "8d97058c-908f-47e9-ac20-b89ff538ba46",
+      "created_at": "2026-06-13T06:16:30.482632+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Reduce sodium in my diet"
+    },
+    {
+      "id": "2e936f08-1a0d-43e0-9776-13fd50b328b6",
+      "created_at": "2026-06-13T06:16:34.054374+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "I could not reach the AI model, so here is a safe baseline: keep meals balanced with dal/curd/eggs or lean protein, vegetables, whole grains or millets, and avoid changing medication or disease-specific restrictions without clinician guidance."
+    },
+    {
+      "id": "0dd48af0-0938-4f5a-b04e-112b6922ac9f",
+      "created_at": "2026-06-13T14:10:57.627895+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Make tomorrow breakfast high protein"
+    },
+    {
+      "id": "ebd6af59-2e65-4b0b-8136-57d3b0c94405",
+      "created_at": "2026-06-13T14:11:15.908004+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To make tomorrow's breakfast high in protein, I'll modify your existing meal plan for Tuesday.\n\n*   **Tomorrow's Breakfast Swap (Tuesday):**\n    *   **Original**: Panta Bhat\n        *   Calories: 641.3, Protein: 27.2g, Carbs: 91.4g, Fat: 18.5g\n    *   **New High-Protein Breakfast**: Moong Dal Cheela (2-3 medium) with mixed vegetables and a side of Low-Fat Curd.\n        *   **Ingredients**: 1.5 cups moong dal batter (from ~1 cup dry moong dal), 1/2 cup mixed vegetables (onion, tomato, green chilli), 2-3 tsp mustard oil for cooking, 1 cup low-fat curd.\n        *   **Qualitative Changes**:\n            *   **Calories**: *Similar* (approx. 600-700 kcal) – Maintains your energy target.\n            *   **Protein**: *Increased* (approx. 40-50g from moong dal and curd) – Significantly boosts protein for muscle health and satiety, supporting your daily protein target.\n            *   **Carbs**: *Similar to slightly lower* (approx. 80-90g) – Provides complex carbohydrates from dal.\n            *   **Fat**: *Similar to slightly higher* (approx. 20-25g, from mustard oil and curd) – Uses healthy fats from mustard oil.\n            *   **Sodium**: *Reduced* – By preparing the cheela and curd with minimal added salt, this meal helps manage your mild hypertension.\n            *   **Fiber**: *Increased* – From moong dal and vegetables, aiding digestion and overall health.\n\nThis modification incorporates moong dal and curd, both excellent sources of protein, and allows for controlled sodium intake, aligning with your health profile and preferences."
+    },
+    {
+      "id": "c86302c3-b100-4ba1-a869-4b61b5f972aa",
+      "created_at": "2026-06-20T01:36:49.189518+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Replace paneer with a cheaper protein source"
+    },
+    {
+      "id": "a3cf812a-97fb-41b3-97db-a44bfee993ca",
+      "created_at": "2026-06-20T01:36:49.682935+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Replace paneer with a cheaper protein source"
+    },
+    {
+      "id": "d36e3076-f251-4177-aa05-b2a533956d34",
+      "created_at": "2026-06-20T01:36:51.351788+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To replace paneer with a cheaper protein source, consider the following options:\n\n*   **Swap Paneer with Dal**: You can use masoor dal or moong dal as a protein-rich alternative to paneer. \n*   **Swap Paneer with Eggs**: Eggs are an excellent source of protein and can be used in various dishes, such as curries or scrambles.\n*   **Swap Paneer with Chicken**: Boneless chicken can be used as a cheaper alternative to paneer in many recipes.\n\nLet's modify your existing meal plan to incorporate these changes. \n\nSince your meal plan doesn't currently include paneer, we can suggest a new recipe that incorporates one of these cheaper protein sources. \n\n*   **New Recipe:** Moong Dal and Vegetable Curry\n    *   **Ingredients:** 1 cup moong dal, 1 cup mixed vegetables (e.g., carrots, potatoes, peas), 1 onion, 2 cloves garlic, 1 teaspoon cumin seeds, 1 teaspoon turmeric powder, salt, and water.\n    *   **Qualitative Changes:**\n        *   **Calories:** Similar (approx. 400-500 kcal)\n        *   **Protein:** Increased (approx. 20-25g from moong dal)\n        *   **Carbs:** Similar (approx. 60-70g from dal and vegetables)\n        *   **Fat:** Lower (approx. 10-15g from minimal oil usage)\n\nThis new recipe is not only cost-effective but also provides a good balance of protein, complex carbohydrates, and healthy fats."
+    },
+    {
+      "id": "b5d64538-da24-46ca-81f5-df3b86f99573",
+      "created_at": "2026-06-20T01:36:58.035759+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "You're looking for cheaper protein alternatives to paneer. While paneer isn't currently in your meal plan, here are some excellent and more budget-friendly protein sources that fit well with an Indian diet, especially for your health profile:\n\n*   **Dals (Lentils):**\n    *   **Why it's cheaper & good for you:** Dals like masoor, moong, and chana are very economical, high in plant-based protein, and rich in fiber. Fiber is excellent for managing high cholesterol and blood pressure.\n    *   **Practical advice:** You already have masoor and moong dal in your pantry. Incorporate them regularly as a side dish (e.g., 1 cup cooked dal with lunch/dinner) or in dishes like dal cheela (as suggested for breakfast) or dal torka.\n*   **Eggs:**\n    *   **Why it's cheaper & good for you:** Eggs are a very affordable, complete protein source. They are also a good source of Vitamin B12, which is beneficial given your deficiency.\n    *   **Practical advice:** You enjoy egg curry. Consider having 1-2 boiled eggs as a snack, or an egg bhurji/omelette for breakfast.\n*   **Soy Chunks (Nutrela):**\n    *   **Why it's cheaper & good for you:** These are extremely high in protein, very cheap, and can absorb flavors well. They are also low in fat and cholesterol-free.\n    *   **Practical advice:** You can use soy chunks in curries (like a soy chunk curry similar to chicken curry), add them to mixed vegetable dishes, or make a dry stir-fry.\n\nThese options can help you meet your protein targets economically while supporting your goals for managing hypertension and cholesterol."
+    },
+    {
+      "id": "aebcd25a-e23d-486e-8422-e6b9e9eccd4a",
+      "created_at": "2026-06-28T12:16:37.125670+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Replace paneer with a cheaper protein source"
+    },
+    {
+      "id": "e3ac5d5f-a7e0-443f-970d-ed611da712f6",
+      "created_at": "2026-06-28T12:16:41.751518+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To replace paneer with a cheaper protein source, let's consider modifying your existing meal plan. \n\n*   **Modified Recipe:** Palak Tofu with Chapati (instead of Palak Paneer)\n    *   **Ingredients:** 1 cup tofu (crumbled), 1 cup palak puree, 2 cloves garlic, 1 teaspoon cumin seeds, 1 teaspoon turmeric powder, salt, and 2 whole wheat chapatis.\n    *   **Qualitative Changes:**\n        *   **Calories:** Similar (approx. 400-500 kcal)\n        *   **Protein:** Increased (approx. 20-25g from tofu)\n        *   **Carbs:** Similar (approx. 60-70g from chapatis and palak)\n        *   **Fat:** Lower (approx. 10-15g from minimal oil usage)\n\nThis modification incorporates tofu as a cheaper protein source, maintaining the nutritional balance of your meal plan. Tofu is a good source of plant-based protein and can be easily absorbed in the palak gravy, making it a nutritious and cost-effective alternative to paneer. \n\nAdditionally, you can also consider other cheaper protein sources like dals (lentils), eggs, or soy chunks (Nutrela) in your meals. For example, you can have a bowl of dal (1 cup cooked) with chapatis and vegetables for lunch, or have boiled eggs (2 eggs) as a snack. \n\nPlease let me know if you need further modifications or have any other preferences."
+    },
+    {
+      "id": "8b47fe11-045c-40b4-9731-2b344a7e10ad",
+      "created_at": "2026-06-28T12:18:57.756394+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "Make tomorrow breakfast high protein"
+    },
+    {
+      "id": "d97d06a0-5baa-460f-8cd6-18d291f1158a",
+      "created_at": "2026-06-28T12:19:00.293715+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "To make tomorrow's breakfast high in protein, I suggest modifying the existing meal plan. \n\n*   **Modified Recipe:** Oats with Banana and Peanut Butter (addition of peanut butter) and a glass of milk\n    *   **Ingredients:** 1 cup oats, 1 banana, 2 tbsp peanut butter, and 1 glass of milk\n    *   **Qualitative Changes:**\n        *   **Calories:** Slightly higher (approx. 500-550 kcal)\n        *   **Protein:** Increased (approx. 25-30g from oats, peanut butter, and milk)\n        *   **Carbs:** Similar (approx. 70-80g from oats and banana)\n        *   **Fat:** Higher (approx. 20-25g from peanut butter)\n\nAlternatively, you can also consider adding other high-protein ingredients like:\n\n*   **Eggs:** Scrambled or boiled eggs can be added to your oats or taken as a side dish (approx. 6-7g protein per egg)\n*   **Nuts and Seeds:** Almonds, walnuts, or chia seeds can be added to your oats for an extra protein boost (approx. 5-8g protein per ounce)\n\nPlease let me know if you have any other preferences or dietary restrictions, and I'll be happy to suggest more modifications."
+    },
+    {
+      "id": "9169c520-70a1-43de-907c-7a2101f0a49f",
+      "created_at": "2026-06-28T12:37:17.521049+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "mere ko sasta protein ka source chahiye jo ki paneer se sasta ho"
+    },
+    {
+      "id": "17b85316-5a8f-4c1e-9ae8-95d133ed8d2c",
+      "created_at": "2026-06-28T12:37:41.450407+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "आपको पनीर से सस्ते और अच्छे प्रोटीन के कई ऑप्शन्स मिल सकते हैं, जो आपके वेजिटेरियन डाइट और एनीमिया की कंडीशन के लिए भी बेनिफिशियल हैं:\n\n*   **दालें (Lentils):**\n    *   **क्यों सस्ता और अच्छा है:** मसूर दाल, मूंग दाल, चना दाल, राजमा और छोले बहुत इकोनॉमिकल हैं। ये प्रोटीन और फाइबर से भरपूर होते हैं, जो आपकी हेल्थ के लिए बहुत अच्छे हैं। राजमा और छोले आपके मील प्लान में पहले से ही इंक्लूडेड हैं।\n    *   **कैसे यूज़ करें:** आप इन्हें दाल फ्राई, दाल तड़का, राजमा मसाला, छोले मसाला के रूप में ले सकते हैं। 1 कप कुक्ड दाल या राजमा/छोले एक अच्छी क्वांटिटी है।\n*   **सोया चंक्स (Nutrela):**\n    *   **क्यों सस्ता और अच्छा है:** ये प्रोटीन का एक बहुत ही इकोनॉमिकल और हाई सोर्स हैं। ये ईज़ीली किसी भी सब्ज़ी या करी में मिक्स किए जा सकते हैं।\n    *   **कैसे यूज़ करें:** आप सोया चंक्स की सब्ज़ी बना सकते हैं, या इन्हें पुलाव, कटलेट या करी में डाल सकते हैं।\n*   **टोफू:**\n    *   **क्यों सस्ता और अच्छा है:** टोफू पनीर का एक बढ़िया और सस्ता ऑप्शन है। यह प्लांट-बेस्ड प्रोटीन का अच्छा सोर्स है।\n    *   **कैसे यूज़ करें:** आपने पहले ही पालक पनीर की जगह पालक टोफू का सजेशन देखा है। आप इसे किसी भी पनीर की सब्ज़ी की जगह यूज़ कर सकते हैं।\n*   **अंकुरित अनाज (Sprouts):**\n    *   **क्यों सस्ता और अच्छा है:** मूंग दाल के अंकुरित अनाज प्रोटीन और कई न्यूट्रिएंट्स से भरपूर होते हैं और बहुत सस्ते पड़ते हैं।\n    *   **कैसे यूज़ करें:** आप इन्हें ब्रेकफास्ट में या इवनिंग स्नैक में सलाद के रूप में ले सकते हैं।\n\nये सभी ऑप्शन्स आपके बजट में फिट होंगे और आपके प्रोटीन गोल्स को पूरा करने में हेल्प करेंगे, साथ ही एनीमिया के लिए भी कुछ हद तक बेनिफिशियल होंगे (खासकर दालें और छोले जो आयरन प्रोवाइड करते हैं, विटामिन सी के साथ लेने पर उनका अब्सॉर्प्शन बेटर होता है)।"
+    },
+    {
+      "id": "3a13d0b6-64dd-45ef-aad8-28fe969ab386",
+      "created_at": "2026-06-28T12:39:04.736843+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "mere ko sasta protein ka source chahiye jo ki paneer se sasta ho"
+    },
+    {
+      "id": "d8a3c904-092c-44f9-a4f9-79bfdc2bab75",
+      "created_at": "2026-06-28T12:39:30.537227+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "आपको पनीर से सस्ते और अच्छे प्रोटीन के कई ऑप्शन्स मिल सकते हैं, जो आपके वेजिटेरियन डाइट और एनीमिया की कंडीशन के लिए भी बेनिफिशियल हैं:\n\n*   **दालें (Lentils):**\n    *   **क्यों सस्ता और अच्छा है:** मसूर दाल, मूंग दाल, चना दाल, राजमा और छोले बहुत इकोनॉमिकल हैं। ये प्रोटीन और फाइबर से भरपूर होते हैं, और इनमें आयरन भी होता है जो एनीमिया के लिए फायदेमंद है। राजमा और छोले आपके मील प्लान में पहले से ही शामिल हैं।\n    *   **कैसे यूज़ करें:** आप इन्हें दाल फ्राई, दाल तड़का, राजमा मसाला, छोले मसाला के रूप में ले सकते हैं। 1 कप (लगभग 150-200 ग्राम) पकी हुई दाल या राजमा/छोले एक अच्छी मात्रा है।\n*   **सोया चंक्स (Nutrela):**\n    *   **क्यों सस्ता और अच्छा है:** ये प्रोटीन का एक बहुत ही किफायती और हाई सोर्स हैं। ये आसानी से किसी भी सब्ज़ी या करी में मिक्स हो जाते हैं।\n    *   **कैसे यूज़ करें:** आप सोया चंक्स की सब्ज़ी बना सकते हैं, या इन्हें पुलाव, कटलेट या करी में डाल सकते हैं। 30-40 ग्राम सूखे सोया चंक्स एक अच्छी सर्विंग है।\n*   **टोफू:**\n    *   **क्यों सस्ता और अच्छा है:** टोफू पनीर का एक बढ़िया और सस्ता विकल्प है। यह प्लांट-बेस्ड प्रोटीन का अच्छा स्रोत है।\n    *   **कैसे यूज़ करें:** आपने पहले ही पालक पनीर की जगह पालक टोफू का सुझाव देखा है। आप इसे किसी भी पनीर की सब्ज़ी की जगह इस्तेमाल कर सकते हैं। 100 ग्राम टोफू एक अच्छी सर्विंग है।\n*   **अंकुरित अनाज (Sprouts):**\n    *   **क्यों सस्ता और अच्छा है:** मूंग दाल के अंकुरित अनाज प्रोटीन और विटामिन C से भरपूर होते हैं, जो आयरन के अवशोषण (absorption) में मदद करता है। ये बनाने में भी आसान और सस्ते हैं।\n    *   **कैसे यूज़ करें:** आप इन्हें नाश्ते में या शाम के स्नैक के रूप में ले सकते हैं। 1 कप (लगभग 100-120 ग्राम) अंकुरित अनाज का सेवन कर सकते हैं।\n*   **मूंगफली (Peanuts):**\n    *   **क्यों सस्ता और अच्छा है:** मूंगफली प्रोटीन और हेल्दी फैट्स का एक सस्ता और अच्छा स्रोत है।\n    *   **कैसे यूज़ करें:** आप इन्हें भुनी हुई मूंगफली के रूप में स्नैक में ले सकते हैं, या पोहा में डाल सकते हैं। एक मुट्ठी (लगभग 30 ग्राम) मूंगफली एक अच्छी मात्रा है।\n\nइन विकल्पों को अपने भोजन में शामिल करके आप अपने प्रोटीन की ज़रूरतों को पूरा कर सकते हैं और अपने बजट का भी ध्यान रख सकते हैं।"
+    },
+    {
+      "id": "a97ef08c-776a-44b7-ad5f-2fb7f9f33a79",
+      "created_at": "2026-06-28T13:02:27.707573+00:00",
+      "user_id": "demo-user",
+      "role": "user",
+      "content": "अब रेको पनीर का एक सरस्ता सूर्च है अपने खाने में जो मेरे बजट में आ सके हैं"
+    },
+    {
+      "id": "7080e079-67d0-431f-a714-7a267a62bbac",
+      "created_at": "2026-06-28T13:02:52.610606+00:00",
+      "user_id": "demo-user",
+      "role": "assistant",
+      "content": "Hi! Paneer se cheaper aur aapke budget mein fit hone wale protein ke kai excellent options hain, jo aapki vegetarian diet aur anemia ki condition ke liye bhi bahut beneficial hain:\n\n*   **Daalein (Lentils):**\n    *   **Why cheap and good:** Masoor dal, Moong dal, Chana dal, Rajma aur Chhole bahut economical hote hain. Ye protein, fiber aur iron se rich hote hain, jo anemia ke liye bahut essential hai. Rajma aur Chhole toh aapko pasand bhi hain.\n    *   **How to use:** Aap inhe Dal Fry, Dal Tadka, Rajma Masala, Chhole Masala ke roop mein le sakte hain. Ek cup (approx 150-200 grams cooked) dal ya Rajma/Chhole ek acchi quantity hai.\n\n*   **Soya Chunks (Nutrela):**\n    *   **Why cheap and good:** Ye protein ka ek bahut hi economical aur high source hain.\n    *   **How to use:** Aap soya chunks ki sabzi bana sakte hain, ya inhe pulao, cutlet ya kisi bhi curry mein daal sakte hain. 30-40 grams dry soya chunks ek acchi serving hai.\n\n*   **Tofu:**\n    *   **Why cheap and good:** Tofu usually paneer se cheaper hota hai aur plant-based protein ka ek great source hai. Aapko Tofu pasand bhi hai.\n    *   **How to use:** Aap paneer ki jagah Palak Tofu ya kisi bhi sabzi mein Tofu ka use kar sakte hain. 100-150 grams Tofu ek acchi quantity hai.\n\n*   **Ankurit Anaaj (Sprouts):**\n    *   **Why cheap and good:** Moong dal ke ankurit anaaj ghar par easily aur bahut cheaply banaye ja sakte hain. Ye protein, fiber aur vitamins se rich hote hain, aur sprouting se inmein iron jaise nutrients ki availability badh jaati hai, jo anemia mein help karta hai. Aapko sprouts pasand bhi hain.\n    *   **How to use:** Aap inhe salad mein, poha mein mix karke ya light sabzi banakar kha sakte hain. Ek cup (approx 100-120 grams) ankurit anaaj ek acchi serving hai.\n\n*   **Moongfali (Peanuts) aur Peanut Butter:**\n    *   **Why cheap and good:** Moongfali bahut cheap hoti hai aur protein aur healthy fats ka accha source hai. Aapko peanut butter bhi pasand hai.\n    *   **How to use:** Aap mutthi bhar bhuni hui moongfali snack ke taur par kha sakte hain, ya oats mein 1-2 tablespoons peanut butter mila sakte hain.\n\nYe sabhi options aapki protein ki requirement ko poora karne mein help karenge aur aapke budget mein bhi fit honge."
     }
   ],
   "meal_feedback": [],

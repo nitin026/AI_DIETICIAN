@@ -1,2 +1,35 @@
-from backend.routers import nutrients_router, meal_plan_router, ingredient_router, grocery_router
-__all__ = ["nutrients_router", "meal_plan_router", "ingredient_router", "grocery_router"]
+﻿from backend.routers import (
+    adherence_router,
+    analytics_router,
+    chat_router,
+    chat_image_router,
+    communication_router,
+    clinic_router,
+    observability_router,
+    feedback_router,
+    grocery_router,
+    ingredient_router,
+    meal_plan_router,
+    nutrients_router,
+    reminders_router,
+    report_router,
+    voice_router,
+)
+
+__all__ = [
+    "nutrients_router",
+    "meal_plan_router",
+    "ingredient_router",
+    "grocery_router",
+    "chat_router",
+    "chat_image_router",
+    "communication_router",
+    "clinic_router",
+    "observability_router",
+    "feedback_router",
+    "adherence_router",
+    "analytics_router",
+    "reminders_router",
+    "report_router",
+    "voice_router",
+]

@@ -39,7 +39,10 @@ def compute_baseline_nutrients(profile: HealthProfile) -> dict:
     Calculate TDEE-based macro targets and apply disease / medication adjustments.
     Returns a flat dict ready for JSON serialisation.
     """
-    bmr = calculate_bmr(profile.weight_kg, profile.height_cm, profile.age, profile.gender)
+    if getattr(profile, "bmr_equation", "mifflin_st_jeor") == "icmr_nin_who_fao_unu":
+        bmr = _calculate_icmr_who_fao_unu_bmr(profile)
+    else:
+        bmr = calculate_bmr(profile.weight_kg, profile.height_cm, profile.age, profile.gender)
     tdee = calculate_tdee(bmr, profile.activity_level)
 
     # Default macro split (ICMR-NIN reference: 55-60% carbs, 15-20% protein, 20-25% fat)
@@ -118,3 +121,25 @@ def compute_baseline_nutrients(profile: HealthProfile) -> dict:
         "disease_notes": disease_notes,
         "medication_interactions": medication_notes,
     }
+
+
+def _calculate_icmr_who_fao_unu_bmr(profile: HealthProfile) -> float:
+    """Approximate adult WHO/FAO/UNU Schofield equations used by ICMR-NIN energy planning."""
+    weight = profile.weight_kg
+    age = profile.age
+    gender = getattr(profile.gender, "value", str(profile.gender)).lower()
+    if gender == "male":
+        if age < 18:
+            return 17.686 * weight + 658.2
+        if age < 30:
+            return 15.057 * weight + 692.2
+        if age < 60:
+            return 11.472 * weight + 873.1
+        return 11.711 * weight + 587.7
+    if age < 18:
+        return 13.384 * weight + 692.6
+    if age < 30:
+        return 14.818 * weight + 486.6
+    if age < 60:
+        return 8.126 * weight + 845.6
+    return 9.082 * weight + 658.5

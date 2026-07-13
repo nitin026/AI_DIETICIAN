@@ -18,6 +18,7 @@ from tenacity import (
     wait_exponential,
 )
 
+from backend.services.langsmith_service import text_payload, trace_full_payloads, trace_run
 from backend.utils.validators import extract_json
 
 # Force reload .env every time this module is imported
@@ -49,6 +50,12 @@ def _get_task_provider(task: str | None = None, provider: str | None = None) -> 
 def get_task_model(task: str) -> tuple[str, str]:
     """Return the configured provider and model name for status reporting."""
     provider = _get_task_provider(task=task)
+    return provider, _get_model_for_provider(provider, task=task)
+
+
+def _get_model_for_provider(provider: str, task: str | None = None) -> str:
+    if task == "clinical":
+        return _get_clinical_model(provider)
     models = {
         "gemini": _get_gemini_model,
         "groq": _get_groq_model,
@@ -57,7 +64,18 @@ def get_task_model(task: str) -> tuple[str, str]:
         "ollama": _get_ollama_model,
     }
     getter = models.get(provider)
-    return provider, getter() if getter else "unknown"
+    return getter() if getter else "unknown"
+
+
+def _get_clinical_model(provider: str) -> str:
+    specific = os.environ.get("CLINICAL_LLM_MODEL", "").strip()
+    if specific:
+        return specific
+    if provider == "groq":
+        return os.environ.get("GROQ_CLINICAL_MODEL", "Llama3-OpenBioLLM-70B").strip()
+    if provider == "huggingface":
+        return os.environ.get("HF_CLINICAL_MODEL_ID", "aaditya/Llama3-OpenBioLLM-70B").strip()
+    return _get_model_for_provider(provider)
 
 
 def _get_task_fallback_provider(task: str | None = None, provider: str | None = None) -> str:
@@ -199,7 +217,7 @@ async def call_gemini(prompt: str, system: str = "", *, json_mode: bool = False)
 
 
 @_retry_decorator()
-async def call_groq(prompt: str, system: str = "", *, json_mode: bool = False) -> str:
+async def call_groq(prompt: str, system: str = "", *, json_mode: bool = False, model: str | None = None) -> str:
     """Call Groq API (free, fast — recommended)."""
     key = _get_groq_key()
 
@@ -211,7 +229,7 @@ async def call_groq(prompt: str, system: str = "", *, json_mode: bool = False) -
             "Get a free key at: https://console.groq.com\n"
         )
 
-    model = _get_groq_model()
+    model = model or _get_groq_model()
     logger.debug("Calling Groq | model={} | prompt_len={}", model, len(prompt))
 
     messages = []
@@ -337,17 +355,32 @@ async def generate(
     logger.info("LLM task: {} | provider: {} | prompt_len: {}", task_label, provider, len(prompt))
 
     async def call_text_provider(provider_name: str) -> str:
-        if provider_name == "groq":
-            return await call_groq(prompt, system)
-        if provider_name == "gemini":
-            return await call_gemini(prompt, system)
-        if provider_name == "huggingface":
-            return await call_huggingface(prompt, system)
-        if provider_name == "biomistral":
-            return await call_biomistral(prompt, system)
-        if provider_name == "ollama":
-            return await call_ollama(prompt, system)
-        raise ValueError(f"Unknown LLM_PROVIDER '{provider_name}'. Use: gemini | groq | huggingface | biomistral | ollama")
+        inputs = {
+            "task": task_label,
+            "provider": provider_name,
+            "model": _get_model_for_provider(provider_name, task=task_label),
+            "json_mode": False,
+            **text_payload("prompt", prompt),
+            **text_payload("system", system),
+        }
+        with trace_run("LLM Provider Call", "llm", inputs=inputs) as run:
+            if provider_name == "groq":
+                result = await call_groq(prompt, system, model=inputs["model"])
+            elif provider_name == "gemini":
+                result = await call_gemini(prompt, system)
+            elif provider_name == "huggingface":
+                result = await call_huggingface(prompt, system, model=inputs["model"])
+            elif provider_name == "biomistral":
+                result = await call_biomistral(prompt, system)
+            elif provider_name == "ollama":
+                result = await call_ollama(prompt, system)
+            else:
+                raise ValueError(f"Unknown LLM_PROVIDER '{provider_name}'. Use: gemini | groq | huggingface | biomistral | ollama")
+            outputs: dict[str, Any] = {"response_chars": len(result)}
+            if trace_full_payloads():
+                outputs["response"] = result
+            run.end(outputs=outputs)
+            return result
 
     try:
         return await call_text_provider(provider)
@@ -378,17 +411,32 @@ async def generate_json(
     logger.info("LLM JSON task: {} | provider: {} | prompt_len: {}", task_label, provider, len(prompt))
 
     async def call_json_provider(provider_name: str) -> str:
-        if provider_name == "gemini":
-            return await call_gemini(prompt, system, json_mode=True)
-        if provider_name == "groq":
-            return await call_groq(prompt, system, json_mode=True)
-        if provider_name == "huggingface":
-            return await call_huggingface(prompt, system)
-        if provider_name == "biomistral":
-            return await call_biomistral(prompt, system)
-        if provider_name == "ollama":
-            return await call_ollama(prompt, system)
-        raise ValueError(f"Unknown LLM_PROVIDER '{provider_name}'. Use: gemini | groq | huggingface | biomistral | ollama")
+        inputs = {
+            "task": task_label,
+            "provider": provider_name,
+            "model": _get_model_for_provider(provider_name, task=task_label),
+            "json_mode": True,
+            **text_payload("prompt", prompt),
+            **text_payload("system", system),
+        }
+        with trace_run("LLM Provider Call", "llm", inputs=inputs) as run:
+            if provider_name == "gemini":
+                result = await call_gemini(prompt, system, json_mode=True)
+            elif provider_name == "groq":
+                result = await call_groq(prompt, system, json_mode=True, model=inputs["model"])
+            elif provider_name == "huggingface":
+                result = await call_huggingface(prompt, system, model=inputs["model"])
+            elif provider_name == "biomistral":
+                result = await call_biomistral(prompt, system)
+            elif provider_name == "ollama":
+                result = await call_ollama(prompt, system)
+            else:
+                raise ValueError(f"Unknown LLM_PROVIDER '{provider_name}'. Use: gemini | groq | huggingface | biomistral | ollama")
+            outputs: dict[str, Any] = {"response_chars": len(result)}
+            if trace_full_payloads():
+                outputs["response"] = result
+            run.end(outputs=outputs)
+            return result
 
     try:
         raw = await call_json_provider(provider)
@@ -404,4 +452,11 @@ async def generate_json(
             fallback_provider,
         )
         raw = await call_json_provider(fallback_provider)
-    return extract_json(raw)
+    with trace_run(
+        "Parse LLM JSON",
+        "parser",
+        inputs={"task": task_label, "raw_chars": len(raw)},
+    ) as run:
+        parsed = extract_json(raw)
+        run.end(outputs={"parsed_type": type(parsed).__name__})
+        return parsed

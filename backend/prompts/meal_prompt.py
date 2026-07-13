@@ -18,6 +18,7 @@ def build_single_day_prompt(
     health_profile: dict,
     medication_warnings: list[str],
     preference_profile: dict,
+    price_context: dict,
     used_meals: list[str],
     icmr_context: list[str],
 ) -> str:
@@ -31,6 +32,9 @@ PREFERENCES AND PANTRY:
 
 NUTRIENT ANALYSIS TARGETS:
 {json.dumps(daily_targets, ensure_ascii=True)}
+
+COST, AFFORDABILITY AND BUDGET CONSTRAINTS:
+{json.dumps(price_context, ensure_ascii=True)}
 
 MEDICATION AND FOOD CAUTIONS:
 {json.dumps(medication_warnings, ensure_ascii=True)}
@@ -46,6 +50,11 @@ Use the dietary preference exactly: vegetarian excludes meat, fish and eggs; veg
 eggetarian permits eggs but excludes meat and fish; non_vegetarian permits animal foods.
 Use the requested regional Indian cuisine even when it is not a common preset. Favor pantry items,
 stay within the requested budget, match the cooking skill, and keep each day close to nutrient targets.
+Budget is strict: use the supplied daily_budget_limit_inr as a hard cap for total estimated daily food cost.
+Optimize nutrient fulfillment under that cap: minimize calorie, protein, fat, carb, fiber, and micronutrient gaps.
+For low budget, prioritize the highest-affordability foods and avoid premium foods.
+For medium budget, mix economical staples with moderate variety.
+For high budget, include more diverse and premium foods while still meeting nutrition targets.
 Use distinct dishes throughout the week. Keep the JSON compact: use 3-5 short ingredients per meal.
 The backend will calculate portions, nutrients, time, cost and grocery quantities.
 
@@ -66,6 +75,7 @@ def build_week_prompt(
     health_profile: dict,
     medication_warnings: list[str],
     preference_profile: dict,
+    price_context: dict,
     icmr_context: list[str],
 ) -> str:
     return f"""Generate a personalized 7-day Indian meal plan.
@@ -79,6 +89,9 @@ PREFERENCES AND PANTRY:
 DAILY NUTRIENT ANALYSIS TARGETS:
 {json.dumps(daily_targets, ensure_ascii=True)}
 
+COST, AFFORDABILITY AND BUDGET CONSTRAINTS:
+{json.dumps(price_context, ensure_ascii=True)}
+
 MEDICATION AND FOOD CAUTIONS:
 {json.dumps(medication_warnings, ensure_ascii=True)}
 
@@ -90,6 +103,13 @@ Each day needs breakfast, mid-morning snack, lunch, evening snack, and dinner.
 Use specific authentic dish names, not generic labels. Avoid repeating dishes.
 Strictly exclude allergies, dislikes, and foods incompatible with the dietary preference.
 Use the requested regional Indian cuisine, pantry ingredients, cooking skill, and budget.
+Budget is strict: keep each day's total estimated food cost within daily_budget_limit_inr.
+Optimize nutrient fulfillment under that cap: minimize calorie, protein, fat, carb, fiber, and micronutrient gaps.
+For low budget, build around high-affordability staples such as dals, eggs when allowed, soy chunks,
+rice, atta, peanuts, curd, and seasonal vegetables. Avoid premium items.
+For medium budget, add moderate variety without relying on premium foods every day.
+For high budget, allow premium and diverse options such as paneer, tofu, chicken/fish when allowed,
+nuts, and varied fruits.
 The backend calculates portions, nutrients, prep time, cost, and grocery quantities.
 Return only compact valid JSON in this exact shape:
 {{

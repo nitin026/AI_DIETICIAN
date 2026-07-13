@@ -30,3 +30,9 @@ data/*.pdf
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Database files & local run artifacts
+*.db
+data/*.db
+scratch/
+rag/vector_store/

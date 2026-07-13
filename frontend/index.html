@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Dietitian – Premium Nutrition Coach</title>
+  <meta name="description" content="Personalised nutrition guidance powered by AI, Clinical RAG, and ICMR-NIN 2024 dietary guidelines. Get tailored meal plans, nutrient analysis, and health insights." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Theme -->
+  <link rel="stylesheet" href="assets/css/custom_theme.css" />
+
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">AI Dietitian</h1>
+      <p class="hero-subtitle">Personalised nutrition guidance powered by AI · Clinical RAG · ICMR-NIN 2024</p>
+    </div>
+  </section>
+
+  <!-- App Shell -->
+  <div class="app-container">
+    <aside class="sidebar">
+      <h2 class="sidebar-title">🥗 AI Dietitian</h2>
+      <nav id="sidebarNav"></nav>
+      <div class="sidebar-disclaimer">
+        ⚕️ This tool provides AI-generated nutritional guidance for informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider.
+      </div>
+    </aside>
+
+    <main class="content" id="contentArea"></main>
+  </div>
+
+  <!-- Entry Point -->
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

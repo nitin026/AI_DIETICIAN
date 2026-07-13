@@ -1,6 +1,6 @@
 """
 rag/ingest.py
-One-time ingestion of the ICMR-NIN PDF into a FAISS / ChromaDB vector store.
+One-time ingestion of the ICMR-NIN PDF into dense FAISS and sparse BM25 indexes.
 
 Usage:
     python -m backend.rag.ingest
@@ -8,10 +8,15 @@ Usage:
 from __future__ import annotations
 
 import os
+import pickle
+import re
 from pathlib import Path
 
+try:
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+except ImportError:
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from loguru import logger
 
@@ -49,17 +54,36 @@ def build_faiss_store(chunks: list, embeddings: HuggingFaceEmbeddings) -> None:
 
     store_path = settings.vector_store_path
     os.makedirs(store_path, exist_ok=True)
-    logger.info("Building FAISS index …")
+    logger.info("Building FAISS index ...")
     vectorstore = FAISS.from_documents(chunks, embeddings)
     vectorstore.save_local(store_path)
     logger.info("FAISS index saved to {}", store_path)
+
+
+def build_bm25_store(chunks: list) -> None:
+    from rank_bm25 import BM25Okapi
+
+    store_path = Path(settings.vector_store_path)
+    store_path.mkdir(parents=True, exist_ok=True)
+    logger.info("Building RankBM25 sparse index ...")
+    texts = [chunk.page_content for chunk in chunks]
+    tokens = [_tokenize(text) for text in texts]
+    payload = {
+        "texts": texts,
+        "metadatas": [getattr(chunk, "metadata", {}) for chunk in chunks],
+        "tokens": tokens,
+        "bm25": BM25Okapi(tokens),
+    }
+    with (store_path / "bm25.pkl").open("wb") as fh:
+        pickle.dump(payload, fh)
+    logger.info("BM25 index saved to {}", store_path / "bm25.pkl")
 
 
 def build_chroma_store(chunks: list, embeddings: HuggingFaceEmbeddings) -> None:
     from langchain_community.vectorstores import Chroma
 
     store_path = settings.vector_store_path
-    logger.info("Building ChromaDB collection …")
+    logger.info("Building ChromaDB collection ...")
     Chroma.from_documents(
         chunks,
         embeddings,
@@ -72,11 +96,15 @@ def build_chroma_store(chunks: list, embeddings: HuggingFaceEmbeddings) -> None:
 def ingest() -> None:
     chunks = load_and_split_pdf(settings.pdf_path)
     embeddings = get_embeddings()
-    if settings.vector_store_type == "faiss":
-        build_faiss_store(chunks, embeddings)
-    else:
+    build_faiss_store(chunks, embeddings)
+    build_bm25_store(chunks)
+    if settings.vector_store_type != "faiss":
         build_chroma_store(chunks, embeddings)
-    logger.info("Ingestion complete ✓")
+    logger.info("Ingestion complete")
+
+
+def _tokenize(text: str) -> list[str]:
+    return re.findall(r"[a-zA-Z0-9]+", text.lower())
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-"""
+﻿"""
 models/request_models.py
 Pydantic v2 request schemas for all API endpoints.
 """
@@ -10,7 +10,7 @@ from typing import Any, Literal, List, Optional
 from pydantic import BaseModel, Field, model_validator
 
 
-# ── Enumerations ─────────────────────────────────────────────────────────────
+# â”€â”€ Enumerations â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 class Gender(str, Enum):
     male = "male"
@@ -47,12 +47,12 @@ class CookingSkill(str, Enum):
 
 
 class BudgetPreference(str, Enum):
-    low = "low"         # ₹100–₹200 / day
-    medium = "medium"   # ₹200–₹400 / day
-    high = "high"       # ₹400+ / day
+    low = "low"         # â‚¹100â€“â‚¹200 / day
+    medium = "medium"   # â‚¹200â€“â‚¹400 / day
+    high = "high"       # â‚¹400+ / day
 
 
-# ── Sub-models ───────────────────────────────────────────────────────────────
+# â”€â”€ Sub-models â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 class AddictionProfile(BaseModel):
     smoking: AddictionFrequency = AddictionFrequency.never
@@ -70,6 +70,7 @@ class HealthProfile(BaseModel):
     diseases: List[str] = Field(default_factory=list, description="e.g. ['type-2 diabetes','hypertension']")
     medications: List[str] = Field(default_factory=list, description="e.g. ['metformin 500mg']")
     addictions: AddictionProfile = Field(default_factory=AddictionProfile)
+    bmr_equation: Literal["mifflin_st_jeor", "icmr_nin_who_fao_unu"] = "mifflin_st_jeor"
 
     @model_validator(mode="after")
     def bmi_sanity(self) -> "HealthProfile":
@@ -90,7 +91,7 @@ class PreferenceProfile(BaseModel):
     regional_cuisine: str = Field(default="North Indian", description="e.g. 'South Indian', 'Bengali'")
 
 
-# ── Endpoint request bodies ───────────────────────────────────────────────────
+# â”€â”€ Endpoint request bodies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 class NutrientPredictionRequest(BaseModel):
     health_profile: HealthProfile
@@ -121,6 +122,7 @@ class UserContextPayload(BaseModel):
 
 class ChatRequest(UserContextPayload):
     message: str = Field(..., min_length=1, max_length=2000)
+    preferred_language: Optional[str] = Field(default=None, description="Optional BCP-47 language code, e.g. hi, bn, ta")
     stream: bool = True
 
 
@@ -163,9 +165,28 @@ class AnalyticsRequest(UserContextPayload):
 
 class ReminderRequest(BaseModel):
     user_id: str = "demo-user"
-    reminder_type: Literal["meal", "hydration", "supplement", "grocery", "adherence"]
+    reminder_type: Literal["meal", "hydration", "supplement", "grocery", "adherence", "follow_up"]
     title: str = Field(..., min_length=2, max_length=120)
     schedule: str = Field(..., description="Human-readable schedule or cron expression")
-    channel: Literal["in_app", "email", "push", "whatsapp_ready"] = "in_app"
+    channel: Literal["in_app", "email", "push", "whatsapp_ready", "sms", "whatsapp", "voice"] = "in_app"
     enabled: bool = True
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class CommunicationSendRequest(BaseModel):
+    user_id: str = "demo-user"
+    channel: Literal["sms", "whatsapp", "voice", "in_app"] = "sms"
+    recipient: str = Field(default="", max_length=40)
+    message_type: Literal["meal_reminder", "hydration", "supplement", "adherence", "follow_up", "freeform"] = "freeform"
+    content: str = Field(..., min_length=1, max_length=1000)
+    related_reminder_id: Optional[str] = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class CommunicationInboundRequest(BaseModel):
+    user_id: str = "demo-user"
+    channel: Literal["sms", "whatsapp", "voice", "in_app"] = "sms"
+    sender: str = Field(default="", max_length=40)
+    content: str = Field(..., min_length=1, max_length=1000)
+    related_reminder_id: Optional[str] = None
     metadata: dict[str, Any] = Field(default_factory=dict)
