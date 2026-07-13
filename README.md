@@ -274,7 +274,7 @@ The project currently stores runtime data in a SQLite database (`data/database.s
 | Logging | Loguru |
 
 
-## Plivo-Aligned Interview Demo
+## Demo
 
 This project has been extended from a nutrition planner into a clinic communication workflow demo: an AI Dietitian Communication Assistant for Indian clinics. It demonstrates how programmable messaging, voice workflows, patient replies, reminders, risk escalation, and observability can support real patient follow-up.
 
